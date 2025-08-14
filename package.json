@@ -2,7 +2,7 @@
   "name": "de-mobile-first",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://domthecoder-dev.github.io/DEIS-website",
+  "homepage": "https://domthecoder-dev.github.io/DEIS-website/",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
