@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Page Not Found</title>
+    <script>
+      // Single-Page Apps (SPAs) require a rewrite to get around a
+      // problem where a user is navigating to a page that does not
+      // exist on the server.
+      // This script checks if a redirect is needed and runs it.
+      (function() {
+        var path = window.location.pathname;
+        var newPath = path.substring(0, path.lastIndexOf('/')) + '/index.html';
+        if (path !== newPath) {
+          window.location.replace(newPath + window.location.search);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
