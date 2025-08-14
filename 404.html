@@ -1,20 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Redirecting...</title>
     <script>
-      // Only redirect if this is a direct page access
-      if (!sessionStorage.redirect) {
-        sessionStorage.redirect = true;
-        const path = location.pathname + location.search + location.hash;
-        window.location.replace('/index.html#' + path);
-      } else {
-        sessionStorage.removeItem('redirect');
-      }
+      // Save the current URL path to sessionStorage
+      sessionStorage.redirect = location.href;
     </script>
+    <meta http-equiv="refresh" content="0;URL='/'" />
   </head>
   <body>
-    <p>Loading application...</p>
-  </body>
+    </body>
 </html>
