@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "clean": "git rm -r --cached build && git commit -m 'clean cache' || echo 'No cache to clean'",
+    "clean": "taskkill /f /im node.exe 2>nul & rd /s /q node_modules 2>nul || echo No node_modules to clean",
     "predeploy": "npm run build && xcopy public\\CNAME build\\ /Y & xcopy public\\404.html build\\ /Y",
     "deploy": "gh-pages -d build"
   },
