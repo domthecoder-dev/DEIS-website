@@ -44,7 +44,7 @@ export default function InvoiceRequestForm() {
     if (data.success) {
       setCustomerName('');
       setCustomerEmail('');
-      CartItems([]);
+      setCartItems([]);
     }
 
   } catch (error) {
