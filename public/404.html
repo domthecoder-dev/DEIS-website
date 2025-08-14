@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <title>Loading...</title>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
     <script>
-      // Handle redirect while preserving route for React Router
-      (function() {
-        var path = window.location.pathname;
-        var search = window.location.search;
-        var hash = window.location.hash;
-        
-        if (path !== '/' && !path.includes('')) {
-          // Using hash routing (#) which works without server config
-          window.location.replace('' + path + search + hash);
-        }
-      })();
+      // Capture the intended path
+      const path = window.location.pathname;
+      const search = window.location.search;
+      const hash = window.location.hash;
+      
+      // Redirect to index.html while preserving the original path
+      window.location.replace('/index.html?redirect=' + 
+        encodeURIComponent(path + search + hash));
     </script>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
+    <p>If you're not redirected automatically, <a href="/">click here</a>.</p>
   </body>
 </html>
