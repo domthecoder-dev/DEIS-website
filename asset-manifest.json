@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.eb6361c0.css",
+    "main.css": "/static/css/main.dc29cb1c.css",
     "main.js": "/static/js/main.abe676f9.js",
     "static/media/cart-icon.png": "/static/media/cart-icon.e70a83a97fd54a45f646.png",
     "static/media/services.png": "/static/media/services.ee9e3795656236744875.png",
@@ -24,6 +24,7 @@
     "static/media/Camera-1-img5.png": "/static/media/Camera-1-img5.4a8185dfdaf81f7d4dd8.png",
     "static/media/Camera-3-img3.png": "/static/media/Camera-3-img3.a1870ca8be1e44b05c4e.png",
     "static/media/Camera-3-img10.png": "/static/media/Camera-3-img10.bc78d3213685eb8930f5.png",
+    "static/media/background-color.jpg": "/static/media/background-color.56df66278d4d9e6a6048.jpg",
     "static/media/Camera-2-img2.png": "/static/media/Camera-2-img2.a840042be1698484ae68.png",
     "static/media/Samantha-Avatar.jpg": "/static/media/Samantha-Avatar.beff86258f7583cf3c7d.jpg",
     "static/media/Camera-3-img1.png": "/static/media/Camera-3-img1.3cd57546c5fca3b90712.png",
@@ -34,11 +35,11 @@
     "static/media/Camera-1-img1.png": "/static/media/Camera-1-img1.5f2e23ea0a718f1acdc4.png",
     "static/media/Logo-Rect.png": "/static/media/Logo-Rect.940b5a65295eb267788f.png",
     "index.html": "/index.html",
-    "main.eb6361c0.css.map": "/static/css/main.eb6361c0.css.map",
+    "main.dc29cb1c.css.map": "/static/css/main.dc29cb1c.css.map",
     "main.abe676f9.js.map": "/static/js/main.abe676f9.js.map"
   },
   "entrypoints": [
-    "static/css/main.eb6361c0.css",
+    "static/css/main.dc29cb1c.css",
     "static/js/main.abe676f9.js"
   ]
 }
