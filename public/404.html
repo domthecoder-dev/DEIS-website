@@ -10,9 +10,9 @@
         var search = window.location.search;
         var hash = window.location.hash;
         
-        if (path !== '/' && !path.includes('index.html')) {
+        if (path !== '/' && !path.includes('')) {
           // Using hash routing (#) which works without server config
-          window.location.replace('/index.html#' + path + search + hash);
+          window.location.replace('' + path + search + hash);
         }
       })();
     </script>

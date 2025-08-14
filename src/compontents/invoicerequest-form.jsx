@@ -3,38 +3,49 @@ import { useCart } from '../Logic/CartContents';
 import '../styles/cart-page.css';
 
 export default function InvoiceRequestForm() {
-  const { total } = useCart();
-  const [cartItems, setCartItems] = useState([]);
+  const { cartItems: itemsInCart, total } = useCart(); // Assuming useCart returns cartItems
   const [customerName, setCustomerName] = useState('');
   const [customerEmail, setCustomerEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbysBe2V_mC_MtSrdm9WEwhfWDImDRZm2IFs0tKjxNuK_uhAX78rMLsqhNTDymoo3Op9/exec';
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxsx5CTLKSXyaMrSwi-BIby4LZAwhqq8pixfdjjg9vKNLf1yvlUzGcIJsoRn0EoSRud/exec';
 
-  const handleSubmit = async (e) => {
-  e.preventDefault();
-  
-  try {
-    const response = await fetch(SCRIPT_URL, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        customerName,
-        customerEmail,
-        cartItems,
-        total,
-      }),
-    });
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsSubmitting(true);
     
-    const data = await response.json();
-    console.log("Success:", data);
-    
-  } catch (error) {
-    console.error("Error:", error);
-  }
-};
+    try {
+      const formData = {
+        name: customerName,
+        email: customerEmail,
+        items: JSON.stringify(itemsInCart), // Stringify the array
+        total: total
+      };
+
+      const response = await fetch(SCRIPT_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams(formData).toString()
+      });
+
+      if (response.ok) {
+        setIsSuccess(true);
+        setSubmitMessage('Form Submitted Successfully!');
+      } else {
+        throw new Error('Network response was not ok');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitMessage('There was an error submitting your form. Please try again.');
+      setIsSuccess(false);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <div className="invoice-form-container">
@@ -45,7 +56,7 @@ export default function InvoiceRequestForm() {
         {submitMessage || 'Fill out the form below to receive an invoice for your cart items.'}
       </p>
 
-      {!isSuccess && (
+      {!isSuccess ? (
         <form onSubmit={handleSubmit} className="invoice-form" id="invoice-form">
           <label htmlFor="customerName" className="form-label">Name:</label>
           <input
@@ -73,6 +84,10 @@ export default function InvoiceRequestForm() {
             {isSubmitting ? 'Sending...' : 'Request Invoice'}
           </button>
         </form>
+      ) : (
+        <div className="success-message">
+          Thank you for your request! We'll send your invoice shortly.
+        </div>
       )}
     </div>
   );
