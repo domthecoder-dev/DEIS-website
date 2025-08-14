@@ -1,0 +1,278 @@
+/* Quote.css - Enhanced for Cross-Browser Compatibility */
+
+.quote-page-main {
+  margin-top: 15px;
+  padding-top: 6.9rem;
+  padding-bottom: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.quote-page-main .container {
+  width: 100%;
+  max-width: 1500px;
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  /* Enable flexbox for the container */
+  gap: 2rem;
+  /* Space between the form and contact details */
+  align-items: flex-start;
+  /* Align items to the top */
+  /* Vendor prefixes for older flexbox (likely not needed) */
+  /* -webkit-flex-direction: row;
+     -ms-flex-direction: row;
+     -webkit-align-items: flex-start;
+     -ms-flex-align: start; */
+}
+
+.form-header {
+  text-align: center;
+  /* Align header text to the left in this context */
+  margin-bottom: 20px;
+  flex: 1;
+  /* Allow it to take up available space */
+}
+
+#form-header-head {
+  font-family: 'Lato', sans-serif;
+  text-decoration: underline;
+  font-size: 1.5rem;
+  padding-top: 20px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.formheader-content {
+  margin-bottom: 10px;
+  color: rgb(222, 222, 222);
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+}
+
+#form-container {
+  flex: 2;
+  /* Give the form more space */
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  background-color: #202124;
+  text-align: left;
+  font-family: 'Montserrat', sans-serif;
+  /* Vendor prefixes for older box-sizing */
+  /* -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box; */
+}
+
+#formheader {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 15px;
+  font-family: 'Lato', sans-serif;
+  text-align: center !important;
+}
+
+#form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  text-align: left;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+textarea {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid white;
+  background-color: #202124;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  /* Vendor prefixes for older box-sizing */
+  /* -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box; */
+}
+
+textarea {
+  height: 150px;
+  resize: vertical;
+  /* Allows only vertical resizing by the user */
+  overflow-y: auto;
+  /* Adds a scrollbar when the content exceeds the height */
+  max-height: 250px;
+  /* Replace 150px with your desired maximum height */
+  /* Optionally add initial styling */
+  min-height: 150px;
+  /* Set an optional minimum height */
+}
+
+.feature-textarea {
+  height: 45px;
+  resize: vertical;
+  /* Allows only vertical resizing by the user */
+  overflow-y: auto;
+  /* Adds a scrollbar when the content exceeds the height */
+  max-height: 250px;
+  /* Replace 150px with your desired maximum height */
+  /* Optionally add initial styling */
+  min-height: 45px;
+  /* Set an optional minimum height */
+}
+
+.buttons {
+  display: flex;
+  /* Enable flexbox for the container */
+  justify-content: space-between;
+  /* Distribute space between the items */
+  align-items: center;
+  /* Vertically align items in the center (optional) */
+  padding: 0 10px;
+  /* Add some padding around the buttons (optional) */
+  /* Vendor prefixes for older flexbox (likely not needed) */
+  /* -webkit-flex-direction: row;
+     -ms-flex-direction: row;
+     -webkit-justify-content: space-between;
+     -ms-flex-pack: justify;
+     -webkit-align-items: center;
+     -ms-flex-align: center; */
+}
+
+.formbtns {
+  padding: 15px 30px;
+  background-color: #202124;
+  color: white;
+  border: 1px solid white;
+  border-radius: 0.3rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  width: auto;
+  transition: background-color 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.formbtns:hover {
+  background-color: #333;
+  color: orange;
+  border-color: orange;
+}
+
+.contact-details {
+  flex: 1;
+  /* Allow it to take up available space */
+  padding: 30px;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  /* Vendor prefixes for older box-sizing */
+  /* -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box; */
+}
+
+.contact-details #contact-header h1 {
+  font-size: 1.5rem;
+  color: white;
+  margin-bottom: 15px;
+  font-family: 'Lato', sans-serif;
+}
+
+.contact-details #contact-content p {
+  margin-bottom: 10px;
+  color: rgb(255, 255, 255);
+  line-height: 1.6;
+}
+
+.contact-details #contact-content p a {
+  color: orange;
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
+}
+
+.contact-details #contact-content p a:hover {
+  text-decoration: underline;
+}
+
+.website-type-inputs {
+  display: none;
+  margin-bottom: 20px;
+}
+
+.website-questionaire {
+  display: none;
+  margin-top: 30px;
+}
+
+.inspo-website {
+  display: none;
+}
+
+.domain-name {
+  display: none;
+}
+
+.website-type-inputs label,
+.website-questionaire label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: white;
+  text-align: left;
+}
+
+.website-type-inputs input[type="text"],
+.website-questionaire input[type="text"],
+.website-type-inputs input[type="number"],
+.website-questionaire input[type="number"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid white;
+  background-color: #202124;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  color: white;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+  /* Vendor prefixes for older box-sizing */
+  /* -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box; */
+}
+
+.radio-button-title {
+  display: none;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .quote-page-main .container {
+    flex-direction: column;
+    /* Stack form and contact details on smaller screens */
+    align-items: stretch;
+    /* Make them take full width */
+    gap: 1rem;
+    /* Vendor prefixes for older flexbox (likely not needed) */
+    /* -webkit-flex-direction: column;
+       -ms-flex-direction: column;
+       -webkit-align-items: stretch;
+       -ms-flex-align: stretch; */
+  }
+
+  .form-header {
+    text-align: center;
+    /* Center header on smaller screens */
+  }
+}

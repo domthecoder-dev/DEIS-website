@@ -1,0 +1,305 @@
+/* src/styles/AboutPage.css - About Us page specific styles */
+
+/* --- MOBILE-FIRST BASE STYLES --- */
+/* These styles apply to all screen sizes by default,
+   and are then overridden by desktop media queries. */
+
+.about-us-main {
+  display: flex;
+  flex-direction: column; /* Stack sections vertically */
+  align-items: center; /* Center items horizontally within main */
+  padding-top: 6.6rem; /* Adjust top padding for fixed header */
+  padding-bottom: 2rem;
+  width: 95%; /* More margin on very small mobile */
+  margin: 0 auto; /* Center the main container itself */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+.about-us-main .container {
+  max-width: 1500px; /* Max width for the content area */
+  width: 100%; /* Take full width of parent .about-us-main */
+  margin: 1.5rem 0; /* Slightly reduced margin for mobile */
+  padding: 1rem; /* Reduced padding for mobile */
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column; /* Stack sections within the container */
+  align-items: stretch; /* Make children take full width of the container */
+}
+
+.page-header,
+.section-header {
+  font-family: 'Lato', sans-serif;
+  color: White;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.8rem; /* Mobile font size */
+}
+
+.page-header {
+  font-size: 2.2rem; /* Slightly larger for main page header on mobile */
+}
+
+.body-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem; /* Mobile font size */
+  line-height: 1.6;
+  color: rgb(222, 222, 222);
+  margin-bottom: 1rem;
+}
+
+/* --- About Intro Section (Mobile: Stacks Vertically) --- */
+.about-intro {
+  display: flex;
+  flex-direction: column; /* Stack image and text columns on mobile */
+  gap: 1.5rem; /* Smaller gap for mobile */
+  margin-bottom: 2rem; /* Reduced margin */
+  align-items: center; /* Center items when stacked */
+  text-align: center; /* Center text within mobile columns */
+}
+
+.about-intro .image-column {
+  width: 90%; /* Max width for image column on mobile */
+  max-width: 300px; /* Limit image size for readability */
+  margin: 0 auto; /* Center image column */
+}
+
+.about-intro .image-column img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.about-intro .text-column {
+  width: 100%; /* Take full width on mobile */
+  flex: none; /* Reset flex on mobile */
+}
+
+/* --- What Sets Apart Section (Mobile: Stacks Vertically) --- */
+.what-sets-apart {
+  display: flex;
+  flex-direction: column; /* Stack image and text columns on mobile */
+  gap: 1.5rem; /* Smaller gap for mobile */
+  margin-bottom: 2rem; /* Reduced margin */
+  align-items: center; /* Center items when stacked */
+  text-align: center; /* Center text within mobile columns */
+}
+
+.what-sets-apart .image-column {
+  width: 90%; /* Max width for image column on mobile */
+  max-width: 300px; /* Limit image size for readability */
+  margin: 0 auto; /* Center image column */
+}
+
+.what-sets-apart .image-column img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: block;
+}
+
+.what-sets-apart .text-column {
+  width: 100%; /* Take full width on mobile */
+  flex: none; /* Reset flex on mobile */
+}
+
+.features-list {
+  list-style: none;
+  padding: 0;
+  text-align: left; /* Keep bullet points left-aligned */
+  width: fit-content; /* Shrink to content width */
+  margin: 0 auto; /* Center the list on mobile */
+}
+
+.features-list li {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem; /* Mobile font size */
+  line-height: 1.8;
+  color: rgb(222, 222, 222);
+  margin-bottom: 0.75rem;
+  padding-left: 1.2rem;
+  position: relative;
+}
+
+.features-list li::before {
+  content: "\2022"; /* Bullet point */
+  color: orange;
+  position: absolute;
+  left: 0;
+  top: 0.2rem; /* Adjust alignment */
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+/* --- Websites We Build Section (Mobile: Stacked List Items with Icons) --- */
+.websites-we-build {
+  text-align: center;
+  margin-bottom: 2rem; /* Reduced margin */
+}
+
+/* For mobile, we're using a simple vertical stack of items.
+   The .websites-grid will act as a flex container for these items. */
+.websites-grid {
+  display: flex;
+  flex-direction: column; /* Stack items vertically on mobile */
+  gap: 1.5rem; /* Space between mobile cards/list items */
+  margin-top: 1.5rem;
+}
+
+/* Styles for the mobile-only list items */
+.mobile-website-item {
+  background-color: #37383b;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: rgb(222, 222, 222);
+  display: flex; /* Use flex to align icon and text */
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem; /* Space between icon and text */
+}
+
+.website-icon {
+  font-size: 1.5rem; /* Size of the emoji icon */
+  color: orange; /* Or any accent color */
+}
+
+/* --- Meet the Team Section (Mobile: Stacked Members) --- */
+#Meet-the-team {
+  background-color: #37383b;
+  padding: 2rem 1.5rem; /* Reduced padding for mobile */
+  text-align: center;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+/* The grid for team members (will stack on mobile) */
+.team-members-grid {
+  display: flex;
+  flex-direction: column; /* Stack team cards vertically on mobile */
+  gap: 2rem; /* Space between team cards */
+  align-items: center; /* Center the cards */
+}
+
+/* (The styling for .mobile-card-wrapper, .mobile-card-front-content, etc.
+    from FlipCard.css will apply here for the mobile team member display) */
+
+
+/* --- DESKTOP OVERRIDES (min-width: 769px) --- */
+/* These styles only apply on screens 769px and wider, overriding mobile defaults. */
+@media (min-width: 769px) {
+  .about-us-main {
+    width: 90%; /* Restore wider width for desktop */
+  }
+
+  .about-us-main .container {
+    padding: 2rem; /* Restore desktop padding */
+    margin: 2rem 0; /* Restore desktop margin */
+  }
+
+  .page-header,
+  .section-header {
+    font-size: 2rem; /* Restore desktop font size */
+  }
+
+  .page-header {
+    font-size: 2.5rem; /* Restore desktop font size */
+  }
+
+  .body-text {
+    font-size: 1.1rem; /* Restore desktop font size */
+  }
+
+  /* About Intro Section (Desktop: Side-by-Side) */
+  .about-intro {
+    flex-direction: row; /* Layout image and text side-by-side */
+    gap: 2rem; /* Restore desktop gap */
+    margin-bottom: 3rem; /* Restore desktop margin */
+    text-align: left; /* Restore left alignment for text columns */
+  }
+
+  .about-intro .image-column {
+    flex: 1; /* Restore desktop flex */
+    width: auto; /* Allow flex to control width */
+    max-width: none; /* Remove mobile max-width */
+    margin: 0; /* Remove mobile margin */
+  }
+
+  .about-intro .text-column {
+    flex: 1.5; /* Restore desktop flex */
+    width: auto; /* Allow flex to control width */
+  }
+
+  /* What Sets Apart Section (Desktop: Side-by-Side) */
+  .what-sets-apart {
+    flex-direction: row; /* Layout image and text side-by-side */
+    gap: 2rem; /* Restore desktop gap */
+    margin-bottom: 3rem; /* Restore desktop margin */
+    text-align: left; /* Restore left alignment for text columns */
+  }
+  /* Optional: Reverse order on desktop for visual balance, if desired */
+  .what-sets-apart .image-column {
+     order: 2;
+  }
+  .what-sets-apart .text-column {
+     order: 1;
+  }
+
+
+  .what-sets-apart .image-column {
+    flex: 1; /* Restore desktop flex */
+    width: auto; /* Allow flex to control width */
+    max-width: none; /* Remove mobile max-width */
+    margin: 0; /* Remove mobile margin */
+  }
+
+  .what-sets-apart .text-column {
+    flex: 1.5; /* Restore desktop flex */
+    width: auto; /* Allow flex to control width */
+  }
+
+  .features-list {
+    margin: 0; /* Remove mobile margin */
+    width: auto; /* Allow list to take full width */
+  }
+
+  /* Websites We Build Section (Desktop: Grid of Flip Cards) */
+  .websites-we-build {
+    margin-bottom: 3rem; /* Restore desktop margin */
+  }
+
+  .websites-grid {
+    display: grid; /* Use CSS Grid for desktop */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 1.5rem; /* Gap between cards */
+    margin-top: 1.5rem;
+  }
+
+  .mobile-website-item {
+    display: none; /* Hide the simple list items on desktop */
+  }
+
+  /* Meet the Team Section (Desktop: Grid of Flip Cards) */
+  #Meet-the-team {
+    padding: 3rem 2rem; /* Restore desktop padding */
+    margin-bottom: 2rem;
+  }
+
+  .team-members-grid {
+    display: grid; /* Use CSS Grid for desktop */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 2rem; /* Space between cards */
+    justify-items: center; /* Center items within grid cells */
+  }
+
+  /* Hide the old bio elements when FlipCard is used on desktop */
+  #Meet-the-team .team-member {
+    display: none; /* Hide the original team member div as FlipCard replaces it */
+  }
+}

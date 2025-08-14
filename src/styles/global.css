@@ -1,0 +1,89 @@
+/* src/styles/global.css */
+
+/* --- ROOT ELEMENTS & BOX-SIZING (Always Mobile-First) --- */
+/* These apply universally */
+:root {
+  box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+/* --- BODY STYLES (Mobile-First Default) --- */
+/* These styles are the base for the smallest screens (mobile) */
+body {
+  margin: 0;
+  padding: 0;
+  /* margin-top: 1rem; - Consider removing this. If you have a fixed header,
+                       the padding-top on main-content-area handles spacing. */
+  background-color: #141414;
+  font-family: 'Montserrat', sans-serif;
+  color: #F3F3F3;
+  /* Light text color for dark background */
+  line-height: 1.5;
+  min-height: 100vh;
+  /* Ensure body takes at least full viewport height */
+  /*
+   * If your background image doesn't stretch enough vertically on very short content pages,
+   * you might need to ensure your root div (e.g., <div className="App">) has min-height: 100vh;
+   * and possibly display: flex; flex-direction: column; if you want a sticky footer.
+   */
+}
+
+/* --- MAIN CONTENT AREA STYLES (Mobile-First Default) --- */
+/* This class should be applied to your main content wrapper (e.g., <main className="main-content-area">) in App.js */
+.main-content-area {
+  /*
+   * Mobile padding-top to account for the fixed header.
+   * Make sure this value is slightly more than your header's total height on mobile
+   * (including its own padding/height) to prevent content from going under it.
+   */
+  padding-top: 8rem;
+  /* Adjust based on your mobile header's height */
+  padding-bottom: 15px;
+  /* Consistent bottom padding for mobile */
+  width: 95%;
+  /* Take up most of the width on mobile */
+  margin: 0 auto;
+  /* Center the content area */
+  box-sizing: border-box;
+  /* Crucial for consistent sizing */
+  position: relative;
+  /* If you plan to use z-index or other positioning within it */
+  z-index: 1;
+  /* Keep content above backdrop, but below fixed header/menu */
+}
+
+/* --- MEDIA QUERIES (Overrides for Larger Screens) --- */
+
+/* Tablet and larger (min-width: 601px) */
+@media (min-width: 601px) {
+  body {
+    background-image: url("../Images/background-color.jpg");
+    /* IMPORTANT: Path will need adjustment */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+  }
+
+  .main-content-area {
+    padding-top: 7rem;
+    /* Adjust for tablet/larger header height */
+    width: 85%;
+    /* Wider content area for tablets */
+  }
+}
+
+/* Desktop and larger (min-width: 993px, assuming your navbar breakpoint is 992px) */
+@media (min-width: 993px) {
+  .main-content-area {
+    padding-top: 6.6rem;
+    /* Adjust for desktop header height */
+    width: 77%;
+    /* Default for large screens */
+  }
+}

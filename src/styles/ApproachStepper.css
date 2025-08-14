@@ -1,0 +1,156 @@
+/* src/styles/ApproachStepper.css */
+
+/* --- APPROACH STEPPER (MOBILE-FIRST) --- */
+
+.approach-stepper-container {
+  width: 100%;
+  max-width: 500px; /* Limit width on mobile to ensure readability */
+  margin: 0 auto;
+  overflow: hidden; /* Hide overflowing cards */
+  padding: 1.5rem 0; /* Add some vertical padding */
+}
+
+/* Stepper Header (Dots/Indicators) */
+.stepper-header {
+  display: flex;
+  justify-content: space-between; /* Distribute indicators */
+  margin-bottom: 2rem;
+  padding: 0 1rem; /* Padding for indicators */
+}
+
+.step-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  flex: 1; /* Make them take equal space */
+  position: relative;
+}
+
+.step-indicator::after {
+  content: '';
+  position: absolute;
+  bottom: -10px; /* Position below numbers/titles */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.3); /* Inactive line color */
+  transform: scaleX(0); /* Start invisible */
+  transform-origin: left center;
+  transition: transform 0.4s ease-out;
+}
+
+.step-indicator.active {
+  opacity: 1;
+}
+
+.step-indicator.active::after {
+  background-color: orange; /* Active line color */
+  transform: scaleX(1); /* Reveal line */
+}
+
+.step-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #202124; /* Dark background */
+  border: 2px solid rgba(255, 255, 255, 0.3); /* Inactive border */
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.step-indicator.active .step-number {
+  background-color: orange; /* Active background */
+  border-color: orange; /* Active border */
+}
+
+.step-title {
+  font-size: 0.8rem;
+  color: rgb(222, 222, 222);
+  white-space: nowrap; /* Prevent title from wrapping */
+  overflow: hidden;
+  text-overflow: ellipsis; /* Add ellipsis if too long */
+}
+
+/* Slider for the actual cards */
+.stepper-slider {
+  display: flex;
+  flex-wrap: nowrap; /* Important: keeps cards in a single row */
+  transition: transform 0.4s ease-out; /* Smooth sliding */
+  width: 100%; /* Will be wider than container to hold all cards */
+}
+
+.approach-step-card {
+  flex: 0 0 100%; /* Each card takes the full width of the container */
+  max-width: 100%;
+  box-sizing: border-box; /* Include padding in width calculation */
+
+  /* Adopted from your original .step styles */
+  padding: 2rem;
+  background-color: #202124;
+  border-radius: 0.5rem;
+  text-align: left; /* Keep original text alignment */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+  margin: 0; /* Remove gaps from flex items */
+}
+
+/* Re-apply icon and text styles for cards */
+.approach-step-card .icon {
+  display: block; /* Make icon block to center it */
+  width: 3rem;
+  height: 3rem;
+  background-color: orange; /* Placeholder for icon color */
+  border-radius: 50%;
+  margin: 0 auto 1rem; /* Center and add margin below */
+}
+
+.approach-step-card h3 {
+  font-size: 1.3rem;
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 0.5rem;
+  color: white;
+  text-align: center; /* Center heading */
+}
+
+.approach-step-card p {
+  line-height: 1.6;
+  color: rgb(222, 222, 222);
+  text-align: center; /* Center paragraph */
+}
+
+/* Stepper Navigation (Optional Previous/Next Buttons) */
+.stepper-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.stepper-navigation button {
+  background-color: orange;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.stepper-navigation button:disabled {
+  background-color: #555;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.stepper-navigation button:hover:not(:disabled) {
+  background-color: #e0a800;
+}

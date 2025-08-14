@@ -1,0 +1,278 @@
+/* Product Info Page Container */
+.product-info-page-container {
+  max-width: 1200px; /* Max width for the content */
+  margin: 0 auto;
+  margin-top: 5rem;
+  padding: 1.5rem 1rem; /* Padding for mobile */
+  background-color: #ffffff; /* White background */
+}
+
+/* Main Grid Layout for Product Info */
+.product-info-grid {
+  display: flex;
+  flex-direction: column; /* Stack image and details vertically on mobile */
+  gap: 2rem; /* Space between sections */
+}
+
+/* Product Image Gallery */
+.product-image-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center; /* Center images on mobile */
+}
+
+.main-image-container {
+  width: 100%; /* Full width on mobile */
+  max-width: 350px; /* Max width for main image container on mobile */
+  aspect-ratio: 1/1; /* Maintain square aspect ratio */
+  background-color: #f9fafb;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.main-product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.thumbnail-gallery {
+  display: flex;
+  flex-wrap: wrap; /* Allow thumbnails to wrap */
+  gap: 0.75rem;
+  justify-content: center; /* Center thumbnails */
+}
+
+.thumbnail-image {
+  width: 60px; /* Smaller thumbnails for mobile */
+  height: 60px;
+  object-fit: contain;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: border-color 0.2s, transform 0.2s;
+  background-color: #f9fafb;
+  padding: 0.25rem;
+}
+
+.thumbnail-image.active {
+  border-color: #2563eb; /* Highlight active thumbnail */
+  transform: scale(1.05);
+}
+
+.thumbnail-image:hover:not(.active) {
+  border-color: #9ca3af;
+  transform: scale(1.02);
+}
+
+/* Product Details Section */
+.product-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem; /* Spacing between detail sections */
+}
+
+.product-details-name {
+  font-size: 2rem; /* Mobile heading size */
+  font-weight: 800;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+}
+
+.product-details-price {
+  font-size: 1rem; /* Mobile price size */
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-size: 1.25rem; /* Mobile section title size */
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.product-description {
+  font-size: 0.95rem; /* Mobile description font size */
+  color: #4b5563;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  white-space: pre-wrap;
+}
+
+.product-features-list,
+.product-specifications-list {
+  list-style: none; /* Remove default bullets */
+  padding: 0;
+  margin: 0;
+}
+
+.product-features-list li,
+.product-specifications-list li {
+  font-size: 0.9rem; /* Mobile list item font size */
+  color: #374151;
+  margin-bottom: 0.5rem;
+  position: relative;
+  padding-left: 1.5rem; /* Space for custom bullet */
+}
+
+.product-features-list li::before {
+  content: '✓'; /* Custom checkmark bullet */
+  color: #22c55e;
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+}
+
+.product-specifications-list li strong {
+  color: #1f2937;
+}
+
+/* Product Actions (Quantity & Add to Cart) */
+.product-actions {
+  display: flex;
+  flex-direction: column; /* Stack on mobile */
+  gap: 1rem;
+  margin-top: 1rem;
+  align-items: flex-start; /* Align to left */
+}
+
+.quantity-selector label {
+  font-weight: 600;
+  margin-right: 0.5rem;
+  color: #374151;
+  font-size: 1rem;
+}
+
+.quantity-input {
+  width: 70px; /* Fixed width for quantity input */
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+  -moz-appearance: textfield; /* Hide arrows for Firefox */
+}
+
+/* Hide arrows for Chrome, Safari, Edge */
+.quantity-input::-webkit-outer-spin-button,
+.quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.add-to-cart-button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  width: 100%; /* Full width button on mobile */
+  max-width: 250px; /* Limit max width */
+}
+
+.add-to-cart-button:hover {
+  background-color: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.product-meta {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 1rem;
+}
+
+.product-info-loading {
+  text-align: center;
+  padding: 3rem;
+  font-size: 1.2rem;
+  color: #6b7280;
+}
+
+/* --- Media Queries for Desktop Layout --- */
+@media (min-width: 768px) {
+  .product-info-grid {
+    flex-direction: row; /* Side-by-side on desktop */
+    gap: 3rem; /* More space between sections */
+    align-items: flex-start; /* Align items to the top */
+  }
+
+  .product-image-gallery {
+    flex-basis: 40%; /* Image gallery takes 40% width */
+    max-width: 450px; /* Increase max-width for main image */
+    position: sticky; /* Make image gallery sticky */
+    top: 20px; /* Adjust sticky position */
+  }
+
+  .main-image-container {
+    padding: 1.5rem; /* Larger padding for desktop image */
+  }
+
+  .thumbnail-gallery {
+    gap: 1rem; /* More gap for thumbnails */
+  }
+
+  .thumbnail-image {
+    width: 80px; /* Larger thumbnails for desktop */
+    height: 80px;
+    padding: 0.5rem;
+  }
+
+  .product-details {
+    flex-basis: 60%; /* Details take 60% width */
+    gap: 1.5rem; /* More spacing between detail sections */
+  }
+
+  .product-details-name {
+    font-size: 2.5rem; /* Larger heading for desktop */
+  }
+
+  .product-details-price {
+    font-size: 2.25rem; /* Larger price for desktop */
+  }
+
+  .section-title {
+    font-size: 1.5rem; /* Larger section title for desktop */
+  }
+
+  .product-description {
+    font-size: 1rem; /* Larger description font size */
+  }
+
+  .product-features-list li,
+  .product-specifications-list li {
+    font-size: 1rem; /* Larger list item font size */
+  }
+
+  .product-actions {
+    flex-direction: row; /* Quantity and button side-by-side */
+    gap: 1.5rem;
+    align-items: center; /* Align vertically */
+  }
+
+  .add-to-cart-button {
+    width: auto; /* Auto width for desktop button */
+    padding: 0.8rem 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-info-page-container {
+    padding: 3rem 2rem; /* More padding on larger screens */
+  }
+}

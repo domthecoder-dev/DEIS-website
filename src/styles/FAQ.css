@@ -1,0 +1,242 @@
+/* src/styles/FAQ.css - Enhanced for Cross-Browser Compatibility */
+
+/* Main container for the FAQ page content, now using a unique class */
+.faq-main { /* Changed from .main.kanban-layout to .faq-main */
+    display: flex;
+    flex-direction: column; /* Stack sections vertically by default (mobile-first) */
+    align-items: center; /* Center items horizontally within main */
+    padding-top: 6.6rem; /* Adjust top padding for fixed header */
+    padding-bottom: 2rem;
+    width: 90%; /* Allow some margin on the sides */
+    margin: 0 auto; /* Center the main container itself */
+    margin-top: 2.5em !important;
+    box-sizing: border-box; /* Include padding and border in width */
+    max-width: 1500px; /* Adopted max-width for overall page content */
+    
+}
+
+/* Inner container for the main content within faq-main */
+.faq-main .container.main-content {
+    width: 100%;
+    /* max-width: 1500px; <-- Already set on .faq-main */
+    padding: 2em; /* Adopted padding */
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* Layout for the Kanban board - using CSS Grid as per original HTML structure */
+.faq-main .kanban-board { /* Changed selector */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 1.5rem; /* Spacing between columns */
+    padding: 2rem 0;
+    width: 100%; /* Ensure it takes full width of its parent */
+}
+
+/* Styling for each column (topic section) */
+.kanban-column { /* Adopted general column styling */
+    background-color: #282B30; /* Darker background for columns */
+    padding: 25px;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column; /* Stack FAQ items within the column */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+
+/* Styling for the topic headers above each column */
+.faq-main .column-header { /* Changed selector */
+    font-family: 'Lato', sans-serif;
+    color: white; /* Changed to white as per original */
+    font-size: 2rem; /* Adopted font-size */
+    margin-bottom: 1rem; /* Adopted margin */
+    text-align: center;
+    padding-bottom: 10px; /* Keep separator from my previous version */
+    border-bottom: 2px solid #555; /* Keep separator from my previous version */
+    margin-top: 0; /* Ensure no default top margin */
+}
+
+/* Styling for each FAQ item (the sticky note) */
+.faq-main .faq-item { /* Changed selector */
+    background-color: #202124; /* Adopted background color */
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); /* Adopted shadow */
+    border-radius: 0.5rem; /* Adopted border-radius */
+    margin-bottom: 1rem; /* Adopted spacing between sticky notes in a column */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* Styling for the question text and the expand button */
+.faq-main .faq-item .question { /* Changed selector */
+    font-family: 'Lato', sans-serif; /* Adopted font */
+    color: white;
+    font-size: 1.1rem; /* Adopted unit */
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between; /* Keep space between start and end items */
+    align-items: flex-start; /* Adopted alignment */
+    flex-wrap: wrap; /* Adopted wrap */
+    position: relative; /* Adopted relative for absolute button positioning */
+    padding-right: 35px; /* Adopted padding for button space */
+    cursor: pointer; /* Indicate clickable */
+}
+
+/* Styling for the expand button (+) */
+.faq-main .faq-item .question button.expand-button { /* Changed selector */
+    background: none; /* Adopted background */
+    border: 1px solid white; /* Adopted border */
+    color: white;
+    width: 25px; /* Adopted size */
+    height: 25px;
+    border-radius: 50%;
+    font-size: 1rem; /* Adopted font size */
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    line-height: 1;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    flex-shrink: 0;
+    position: absolute; /* Adopted absolute positioning */
+    top: 0; /* Adopted top alignment */
+    right: 0; /* Adopted right positioning */
+}
+
+.faq-main .faq-item .question button.expand-button:hover { /* Changed selector */
+    background-color: #333;
+    color: white;
+}
+
+/* Styling for the answer text (initially hidden with smooth transition) */
+.faq-main .faq-item .answer { /* Changed selector */
+    font-family: 'Montserrat', sans-serif; /* Adopted font */
+    color: white; /* Adopted color */
+    line-height: 1.6;
+    margin-top: 0.75rem; /* Adopted margin */
+    font-size: 0.9rem; /* Adopted unit */
+
+    /* Transition properties for smooth expand/collapse */
+    overflow: hidden;
+    max-height: 0; /* Hidden by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: max-height 0.3s ease-out, opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0.3s ease-out;
+}
+
+/* Class added by React when the answer is open */
+.faq-main .faq-item .answer.open { /* Changed selector */
+    max-height: 500px; /* Arbitrary max height, adjust if content is taller */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.faq-main .faq-item .answer p { /* Changed selector */
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.faq-main .faq-item .answer p:last-child { /* Changed selector */
+    margin-bottom: 0;
+}
+
+.faq-main .faq-item .answer ol { /* Changed selector */
+    padding-left: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+.faq-main .faq-item .answer ol li { /* Changed selector */
+    line-height: 1.6;
+    margin-bottom: 0.3rem;
+}
+
+.faq-main .faq-item .answer a { /* Changed selector */
+    color: orange; /* Adopted color */
+    text-decoration: none;
+    transition: text-decoration 0.3s ease;
+}
+
+.faq-main .faq-item .answer a:hover { /* Changed selector */
+    text-decoration: underline;
+}
+
+/* Media Query for smaller screens (expandable list) */
+@media (max-width: 768px) {
+    /* Removed #FAQpage-main margin-top and .main.kanban-layout padding-top !important
+       as .faq-main already handles this for the entire page's main content */
+
+    .faq-main { /* Changed selector */
+        padding-top: 1rem; /* Adjust padding for fixed header on smaller screens */
+        padding-bottom: 1rem;
+        width: 95%; /* Adjust width for smaller screens */
+        margin: 0 auto; /* Ensure centering */
+    }
+
+    .faq-main .container.main-content { /* Changed selector */
+        padding: 1rem; /* Adjust padding */
+    }
+
+    .faq-main .kanban-board { /* Changed selector */
+        display: flex; /* Switch to flex for stacking */
+        flex-direction: column;
+        gap: 1rem; /* Smaller gap when stacked */
+        padding: 1rem 0; /* Adjust padding */
+    }
+
+    .kanban-column { /* Adopted margin-bottom */
+        margin-bottom: 1rem; /* Slightly reduced margin between columns */
+        padding: 15px; /* Adjust padding for columns */
+        min-width: unset; /* Allow columns to take full width */
+    }
+    .kanban-column:last-child {
+        margin-bottom: 0; /* No margin on the last column when stacked */
+    }
+
+    .faq-main .column-header { /* Changed selector */
+        text-align: left;
+        margin-bottom: 0.3rem; /* Slightly reduced margin below header */
+        font-size: 1.8rem; /* Adjust header size for mobile */
+    }
+
+    .faq-main .faq-item { /* Changed selector */
+        margin-bottom: 0.75rem; /* Slightly reduced margin between items */
+        border: 1px solid #333; /* Darker border for separation */
+        border-radius: 0.3rem;
+        padding: 10px;
+    }
+
+    .faq-main .faq-item .question { /* Changed selector */
+        font-size: 1rem; /* Adjust question size for mobile */
+        padding-right: 25px; /* Make space for the button */
+        align-items: center; /* Center vertically for cleaner look on mobile */
+    }
+
+    .faq-main .faq-item .question button.expand-button { /* Changed selector */
+        background: none;
+        border: 1px solid white; /* Adopted border from mobile */
+        color: white; /* Adopted color from mobile */
+        width: 20px; /* Smaller button for mobile */
+        height: 20px; /* Smaller button for mobile */
+        font-size: 0.8rem;
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%);
+        margin-left: 0; /* Remove extra margin */
+    }
+}
+
+/* Media Query for tablet (2 columns, adjust if needed for your specific 768px-992px range) */
+@media (min-width: 769px) and (max-width: 991px) {
+    .faq-main .kanban-board {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Two columns for tablets */
+        gap: 1.5rem;
+    }
+    .kanban-column {
+        min-width: unset; /* Allow columns to resize */
+    }
+}

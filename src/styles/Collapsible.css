@@ -1,0 +1,105 @@
+/* src/styles/Collapsible.css */
+
+.collapsible {
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden; /* Hide overflow during animation */
+  margin-bottom: 0.5rem; /* Small margin between collapsible items */
+  background-color: transparent; /* No background for the wrapper */
+  text-align: center; /* Center the header and content within the collapsible */
+}
+
+.collapsible-header {
+  display: flex;
+  justify-content: left; /* Center horizontally */
+  align-items: center;
+  padding: 0.8em 0; /* Padding for the clickable area */
+  cursor: pointer;
+  background-color: transparent; /* Assuming this sits within a tier column background */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* Separator for header */
+  font-family: 'Montserrat', sans-serif;
+  color: white; /* Title color */
+  font-weight: bold; /* Make the title stand out */
+  font-size: 1em; /* Consistent with list item font size */
+  line-height: 1.3;
+}
+
+.collapsible-header:hover {
+  color: orange; /* Hover effect for the title */
+}
+
+.collapsible-title {
+  margin: 0; /* Remove default h4 margin */
+}
+
+.collapsible-icon {
+  width: 1em; /* Size of the icon */
+  height: 1em;
+  position: relative;
+  transition: transform 0.3s ease;
+  flex-shrink: 0; /* Prevent icon from shrinking */
+  margin-left: 0.5em; /* Space between title and icon */
+  color: orange; /* Icon color */
+}
+
+.collapsible-icon::before,
+.collapsible-icon::after {
+  content: '';
+  position: absolute;
+  background-color: currentColor; /* Use currentColor to inherit from .collapsible-icon */
+  border-radius: 2px;
+}
+
+.collapsible-icon::before {
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Horizontal line */
+  transform: translateY(-50%);
+}
+
+.collapsible-icon::after {
+  top: 0;
+  left: 50%;
+  width: 2px; /* Vertical line */
+  height: 100%;
+  transform: translateX(-50%);
+}
+
+.collapsible-icon.open::after {
+  transform: translateX(-50%) rotate(90deg); /* Rotate vertical line to hide it (or make it a cross) */
+}
+
+.collapsible-content-wrapper {
+  /* Using JS to control height, but CSS transition still applies */
+  transition: height 0.3s ease-out, opacity 0.3s ease-out;
+  overflow: hidden; /* Crucial for hiding content during collapse */
+  padding-bottom: 0.5em; /* Padding inside the content area */
+  padding-top: 0.5em; /* Padding inside the content area */
+  color: rgb(222, 222, 222); /* Content text color */
+}
+
+/* Ensure nested lists within collapsible content are styled correctly */
+.collapsible-content-wrapper .normal-list {
+  padding: 0;
+  margin: 0;
+  list-style: none; /* No bullets for inner lists */
+  text-align: center; /* Center text within collapsed content */
+}
+
+.collapsible-content-wrapper .normal-list-item {
+  padding: 0.2em 0; /* Reduced padding for compact lists */
+  font-size: 0.9em; /* Slightly smaller for sub-items */
+  border-bottom: none; /* No border for inner list items */
+  line-height: 1.4;
+}
+
+/* No media query for collapsible-desktop or collapsible-mobile anymore,
+   as the single .collapsible class handles both. */
+
+/* Optional: Adjust for very small screens if text gets too cramped in header */
+@media (max-width: 400px) {
+    .collapsible-header {
+        font-size: 0.9em; /* Slightly smaller header font on very small screens */
+    }
+}

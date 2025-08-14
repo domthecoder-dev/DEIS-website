@@ -1,0 +1,718 @@
+/* src/styles/homepage.css - Homepage specific styles */
+
+/* --- GLOBAL HOMEPAGE WRAPPER --- */
+/*
+ * NOTE: The padding-top, width, margin, box-sizing on .Home-Page-main
+ * are likely better managed by .main-content-area in global.css to avoid conflicts.
+ * We'll primarily focus on internal section layouts here.
+ */
+.Home-Page-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Center sections horizontally */
+  /* Remove layout properties that should be in global.css's .main-content-area */
+  /* padding-top: 7rem; */
+  /* padding-bottom: 2rem; */
+  /* width: 90%; */
+  /* margin: 0 auto; */
+  /* box-sizing: border-box; */
+}
+
+/* --- HERO SECTION (MOBILE-FIRST DEFAULTS) --- */
+.hero {
+  /* Default to mobile stacking and centering */
+  display: flex;
+  flex-direction: column;
+  /* Stack content and image vertically */
+  align-items: center;
+  /* Center items horizontally */
+  text-align: center;
+  /* Center text */
+  padding: 3rem 1rem;
+  /* Mobile padding - adjusted */
+  width: 100%;
+  /* Take full width on mobile */
+  max-width: none;
+  /* Reset desktop max-width */
+  margin: 0 auto;
+  margin-top: 1.5rem;
+  position: relative;
+  /* For potential pseudo-elements or overlays */
+  overflow: hidden;
+  /* Ensure nothing leaks out */
+  background-color: transparent;
+  /* Assuming global body background is used */
+}
+
+/* Optional: Subtle gradient overlay for more depth if desired */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.4) 100%);
+  z-index: 1;
+  /* Below content, above background image */
+  pointer-events: none;
+  /* Allow clicks to pass through */
+}
+
+
+.hero-content {
+  flex: none;
+  /* Don't flex grow/shrink */
+  width: 100%;
+  /* Take full width */
+  padding: 0 1rem;
+  /* Inner padding */
+  margin-bottom: 2.5rem;
+  /* More space below text on mobile */
+  z-index: 2;
+  /* Ensure content is above overlay */
+  /* Entrance animation for content */
+  animation: fadeInMoveUp 1s ease-out forwards;
+  opacity: 0;
+  /* Start hidden for animation */
+  transform: translateY(20px);
+  /* Start slightly below for animation */
+}
+
+.hero-content h1 {
+  font-size: 2rem;
+  /* Mobile-first, larger than previous mobile */
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 1rem;
+  color: White;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  /* Subtle text shadow for depth */
+  line-height: 1.3;
+  /* Better readability */
+}
+
+.hero-content p {
+  font-size: 1.1rem;
+  /* Slightly larger text for mobile */
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  color: rgb(211, 211, 211);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  /* Subtle text shadow */
+}
+
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  /* Stack buttons vertically on mobile */
+  align-items: center;
+  /* Center buttons */
+  width: 100%;
+}
+
+.hero-buttons a {
+  margin-right: 0;
+  /* Remove horizontal margin */
+  width: 90%;
+  /* Buttons take most of the mobile width */
+  text-align: center;
+  /* Adjust padding and font size for mobile buttons */
+  padding: 1rem 1.5rem;
+  font-size: 1rem;
+  /* Ensure primary button styles are consolidated or referenced */
+}
+
+.hero-image-container {
+  flex: none;
+  /* Don't flex grow/shrink */
+  width: 90%;
+  /* Control image width on mobile */
+  max-width: 400px;
+  /* Cap the image size on larger mobiles/small tablets */
+  text-align: center;
+  z-index: 2;
+  /* Ensure image is above overlay */
+  /* Entrance animation for image */
+  animation: fadeIn 1.5s ease-out forwards;
+  opacity: 0;
+  /* Start hidden for animation */
+  animation-delay: 0.3s;
+  /* Delay image animation slightly */
+}
+
+.hero-image-container img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  /* Stronger shadow for intrigue */
+  display: block;
+  object-fit: cover;
+  /* Ensures image covers its container well */
+}
+
+/* --- BUTTON STYLING (Unified for Homepage) --- */
+/* This ensures the primary button on the homepage is orange with pulse */
+.button.primary,
+.get-quote-button {
+  /* Apply these styles to both classes if they can be used interchangeably */
+  background-color: orange;
+  color: white;
+  border-radius: 0.5rem;
+  /* Or 1.5rem if preferred */
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* Pulse animation */
+  box-shadow: 0 0 0 rgba(255, 165, 0, 0.7);
+  animation: pulse 1.5s infinite;
+  display: inline-block;
+  /* Ensure it respects padding/margins correctly */
+}
+
+.button.primary:hover,
+.get-quote-button:hover {
+  background-color: #e0a800;
+  /* Darker orange on hover */
+  transform: translateY(-2px);
+  /* Subtle lift on hover */
+}
+
+/* Keep the secondary button styles if you intend to use them */
+.hero-buttons .secondary {
+  background-color: transparent;
+  color: #282B30;
+  /* Your dark text color */
+  border: 2px solid #282B30;
+}
+
+.hero-buttons .secondary:hover {
+  background-color: #f0f0f0;
+}
+
+/* Keyframes for animations */
+@keyframes fadeInMoveUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 165, 0, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 10px rgba(255, 165, 0, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 165, 0, 0);
+  }
+}
+
+/* --- WHY CHOOSE US SECTION (MOBILE DEFAULTS) --- */
+.why-choose {
+  padding: 3rem 1rem;
+  /* Smaller padding for mobile */
+  background-color: #37383b;
+  text-align: center;
+  max-width: 100%;
+  /* Full width for mobile */
+  margin: 0.5rem auto;
+}
+
+.why-choose h2 {
+  font-size: 1.8rem;
+  /* Smaller heading for mobile */
+  margin-bottom: 1.5rem;
+}
+
+/*
+  * Original .benefits-list will only be rendered on desktop.
+  * So, these styles will apply only when .benefits-list is rendered,
+  * which is *only* on desktop due to conditional rendering in HomePage.js.
+  * No need to change these; they define the desktop grid.
+*/
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+/* --- TESTIMONIALS SECTION (MOBILE DEFAULTS) --- */
+.testimonels h2 {
+  padding-top: 3rem;
+  /* Adjusted for mobile */
+  font-size: 1.6rem;
+}
+
+.Test {
+  background-color: #202124;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  /* Add padding for mobile */
+}
+
+.Test-Header {
+  text-align: center;
+  /* Center for mobile */
+  font-size: 1.8rem !important;
+  /* Smaller for mobile */
+  margin: 0.5rem 0 !important;
+  /* Adjust margins */
+  padding: 0 !important;
+}
+
+.Test-Relations {
+  text-align: center;
+  /* Center for mobile */
+  font-size: 1rem !important;
+  /* Smaller for mobile */
+  margin: 0.2rem 0 1rem 0 !important;
+  /* Adjust margins */
+  padding: 0 !important;
+}
+
+.Test-Comment {
+  text-align: center;
+  /* Center for mobile */
+  font-size: 1.2rem !important;
+  /* Smaller for mobile */
+  margin: 0 !important;
+  /* Adjust margins */
+  padding-bottom: 1.5rem !important;
+  /* Adjust padding */
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+  font-style: italic;
+}
+
+/* --- OUR APPROACH SECTION (MOBILE DEFAULTS) --- */
+.our-approach {
+  padding: 3rem 1rem;
+  /* Smaller padding for mobile */
+  max-width: 100%;
+  /* Full width for mobile */
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.our-approach h2 {
+  font-size: 1.8rem;
+  /* Smaller heading for mobile */
+  margin-bottom: 1.5rem;
+}
+
+.process-steps {
+  display: grid;
+  /* Still grid, but will collapse to 1 column on mobile */
+  grid-template-columns: 1fr;
+  /* Single column for mobile */
+  gap: 1.5rem;
+  /* Smaller gap for mobile */
+}
+
+.step {
+  padding: 1.5rem;
+  /* Smaller padding for mobile */
+}
+
+.step .icon {
+  width: 2.5rem;
+  /* Smaller icon for mobile */
+  height: 2.5rem;
+  margin: 0 auto 0.8rem;
+}
+
+.step h3 {
+  font-size: 1.2rem;
+  /* Smaller heading for mobile */
+}
+
+.step p {
+  font-size: 0.95rem;
+  /* Smaller text for mobile */
+}
+
+/* --- QUALITY TOOLS SECTION (MOBILE DEFAULTS) --- */
+.quality-tools {
+  padding: 3rem 1rem;
+  /* Smaller padding for mobile */
+  background-color: #37383b;
+  text-align: center;
+  max-width: 100%;
+  /* Full width for mobile */
+  margin: 2rem auto;
+}
+
+.quality-tools h2 {
+  font-size: 1.8rem;
+  /* Smaller heading for mobile */
+  margin-bottom: 1.5rem;
+}
+
+.tools-used {
+  flex-direction: column;
+  /* Stack tools vertically on mobile */
+  align-items: center;
+  /* Center stacked tools */
+  gap: 0.8rem;
+  /* Smaller gap for mobile */
+  margin-bottom: 1rem;
+}
+
+.tool {
+  padding: 0.6rem 1.2rem;
+  /* Smaller padding for mobile tools */
+  font-size: 0.9rem;
+}
+
+.quality-tools p {
+  font-size: 0.95rem;
+  /* Smaller text for mobile */
+}
+
+/* --- CALL TO ACTION SECTION (MOBILE DEFAULTS) --- */
+.call-to-action {
+  padding: 3rem 1rem;
+  /* Smaller padding for mobile */
+  font-size: 1rem;
+  max-width: 100%;
+  /* Full width for mobile */
+  margin: 2rem auto;
+  border-radius: 0.3rem;
+  /* Slightly smaller border radius */
+}
+
+.call-to-action h2 {
+  font-size: 2rem;
+  /* Smaller heading for mobile */
+  margin-bottom: 1rem;
+}
+
+.call-to-action p {
+  font-size: 1rem;
+  /* Smaller text for mobile */
+  margin-bottom: 1.5rem;
+}
+
+.call-to-action .button.large {
+  font-size: 1.2rem;
+  /* Smaller button font for mobile */
+  padding: 1rem 2rem;
+}
+
+
+/* --- DESKTOP OVERRIDES (min-width: 993px) --- */
+/* These styles apply when the screen is at least 993px wide */
+@media (min-width: 993px) {
+  .hero {
+    flex-direction: row;
+    /* Desktop layout: row */
+    text-align: left;
+    /* Text aligns left */
+    padding: 7rem 2rem;
+    /* Larger padding */
+    max-width: 1200px;
+  }
+
+  /* Remove pseudo-element on desktop if it causes issues or isn't desired */
+  .hero::before {
+    background: none;
+    /* Disable gradient for desktop */
+  }
+
+  .mobile-br {
+    display:none;
+  }
+
+  .hero-content {
+    flex: 1;
+    /* Allow content to take up space */
+    padding-right: 2rem;
+    /* Right padding for content */
+    margin-bottom: 0;
+    /* Remove mobile margin */
+    animation: none;
+    /* Disable mobile animation on desktop */
+    opacity: 1;
+    /* Ensure visible */
+    transform: none;
+    /* Ensure no transform */
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+    /* Larger heading for desktop */
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+    /* Original desktop text size */
+  }
+
+  .hero-buttons {
+    flex-direction: row;
+    /* Buttons in a row */
+    align-items: flex-start;
+    /* Align to start */
+    width: auto;
+    /* Buttons take natural width */
+  }
+
+  .hero-buttons a {
+    margin-right: 1rem;
+    /* Spacing between buttons */
+    margin-bottom: 0;
+    /* Remove vertical margin */
+    width: auto;
+    /* Buttons take natural width */
+    text-align: left;
+    /* Restore desktop padding and font size */
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .hero-image-container {
+    flex: 1;
+    /* Allow image to take up space */
+    width: auto;
+    /* Reset explicit mobile width */
+    max-width: 100%;
+    /* Ensure it fits flex container */
+    animation: none;
+    /* Disable mobile animation on desktop */
+    border-radius: 0.5rem;
+    opacity: 1;
+    /* Ensure visible */
+  }
+
+  .hero-image-container img {
+    max-width: 100%;
+    max-height: 450px;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    /* Stronger shadow for intrigue */
+    display: block;
+    object-fit: cover;
+    object-position: top
+      /* Ensures image covers its container well */
+  }
+
+  /* --- WHY CHOOSE US SECTION (DESKTOP OVERRIDES) --- */
+  .why-choose {
+  padding: 4rem 2rem;
+  background-color: #37383b;
+  text-align: center;
+  max-width: 1200px;
+  margin: 2rem auto;
+}
+
+.why-choose h2 {
+  font-size: 2rem;
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.benefit {
+  padding: 2rem;
+  background-color: #202124;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.benefit .icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-color: orange;
+  /* Placeholder for icon color */
+  border-radius: 50%;
+  margin-right: 1rem;
+  vertical-align: middle;
+}
+
+.benefit h3 {
+  font-size: 1.5rem;
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 0.5rem;
+  color: white;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.benefit p {
+  line-height: 1.6;
+  color: rgb(222, 222, 222);
+}
+
+  /* --- TESTIMONIALS SECTION (DESKTOP OVERRIDES) --- */
+  .testimonels h2 {
+    padding-top: 4rem;
+    font-size: 2rem;
+  }
+
+  .Test {
+    padding: 2rem;
+    /* Larger padding for desktop */
+  }
+
+  .Test-Header {
+    text-align: left;
+    /* Align left for desktop */
+    font-size: 2.5rem !important;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .Test-Relations {
+    text-align: left;
+    /* Align left for desktop */
+    font-size: 1.2rem !important;
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
+  .Test-Comment {
+    text-align: justify;
+    /* Justify text for desktop */
+    font-size: 1.5rem !important;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    font-style: italic;
+  }
+
+  /* --- OUR APPROACH SECTION (DESKTOP OVERRIDES) --- */
+  .our-approach {
+  padding: 4rem 2rem;
+  max-width: 1200px;
+  margin: 2rem auto;
+  text-align: center;
+}
+
+.our-approach h2 {
+  font-size: 2rem;
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.step {
+  padding: 2rem;
+  background-color: #202124;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.step .icon {
+  display: block;
+  width: 3rem;
+  height: 3rem;
+  background-color: orange;
+  /* Placeholder for icon color */
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+}
+
+.step h3 {
+  font-size: 1.3rem;
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 0.5rem;
+  color: white;
+}
+
+.step p {
+  line-height: 1.6;
+  color: rgb(222, 222, 222);
+}
+
+  /* --- QUALITY TOOLS SECTION (DESKTOP OVERRIDES) --- */
+  .quality-tools {
+    padding: 4rem 2rem;
+    max-width: 1200px;
+  }
+
+  .quality-tools h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .tools-used {
+    flex-direction: row;
+    /* Desktop row */
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .tool {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .quality-tools p {
+    font-size: 1rem;
+  }
+
+  /* --- CALL TO ACTION SECTION (DESKTOP OVERRIDES) --- */
+  .call-to-action {
+    padding: 5rem 2rem;
+    font-size: 1.2rem;
+    max-width: 1200px;
+    border-radius: 0.5rem;
+  }
+
+  .call-to-action h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .call-to-action p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+
+  .call-to-action .button.large {
+    font-size: 1.5rem;
+    padding: 1.2rem 2.5rem;
+  }
+}

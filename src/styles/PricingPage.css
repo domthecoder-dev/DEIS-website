@@ -1,0 +1,399 @@
+/* src/styles/PricingPage.css */
+
+.pricing-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6.6rem;
+  padding-bottom: 2rem;
+  width: 95%; /* Adjust for mobile margin */
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Section Title */
+#title {
+  font-size: 2em;
+  margin-bottom: 1em;
+  text-align: center;
+  color: white; /* Ensure title is white */
+}
+
+#title h1 {
+  font-family: 'Lato', sans-serif; /* Consistent with other page headers */
+  font-size: 2.2rem; /* Mobile font size */
+  margin: 0;
+}
+
+
+/* Tier Container - Flexbox for columns */
+.tier-container {
+  display: flex;
+  flex-direction: column; /* Mobile: Stack columns vertically */
+  justify-content: center;
+  align-items: center; /* Center items when stacked */
+  gap: 20px; /* Space between the columns on mobile */
+  padding: 10px; /* Smaller padding for mobile */
+  width: 100%; /* Take full width */
+}
+
+/* Individual Tier Columns */
+.tier-column {
+  background-color: #202124;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 95%; /* Take almost full width on mobile */
+  max-width: 350px; /* Limit max width for readability on larger phones/small tablets */
+  box-sizing: border-box;
+  position: relative;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Consistent shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover transition */
+}
+
+/* Tier description text */
+.tier-column .tier-description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.95em;
+  line-height: 1.5;
+  margin-bottom: 15px; /* Adjust spacing */
+}
+
+/* Wrapper for main features list to help with spacing */
+.tier-column .tier-features {
+  flex-grow: 1; /* Allow features section to grow and push price/button to bottom */
+  margin-bottom: 20px; /* Space between features and price */
+}
+
+/* Main UL within Tier Columns */
+.tier-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Reset default margin */
+  text-align: left; /* Align text within main list */
+}
+
+/* List Items within Tier Columns (top-level items) */
+.tier-column ul li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Lighter separator */
+  font-size: 1em;
+  line-height: 1.3;
+  font-family: 'Montserrat', sans-serif; /* Consistent font */
+  color: rgb(222, 222, 222); /* Lighter text color */
+}
+
+.tier-column ul li:last-child {
+  border-bottom: none;
+}
+
+/* Price Range Styling */
+.tier-price-range {
+  margin-top: auto; /* Push price to the bottom if content varies */
+  padding-top: 15px; /* Space above price */
+  border-top: 1px solid rgba(255, 255, 255, 0.1); /* Separator above price */
+  margin-bottom: 15px; /* Space between price and button */
+}
+
+.tier-price-range p {
+  font-family: 'Lato', sans-serif; /* Use Lato for pricing */
+  font-size: 1.6em; /* Larger price font size */
+  font-weight: bold;
+  color: orange; /* Orange color for price */
+  margin: 0; /* Remove default paragraph margin */
+}
+
+/* Button Styles */
+.tier-button { /* Changed from .tier-column button for specificity */
+  background-color: orange; /* Consistent with other orange buttons */
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  width: 100%; /* Make button full width of card */
+  box-sizing: border-box; /* Include padding in width */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tier-button:hover {
+  background-color: darkorange;
+  box-shadow: 0 4px 8px rgba(255, 111, 97, 0.3);
+}
+
+/* Recommended Tier */
+.tier-column.recommended {
+  border: 2px solid orange; /* Highlight recommended with a border */
+  box-shadow: 0 8px 16px rgba(255, 111, 97, 0.3); /* Enhanced shadow for recommended */
+}
+
+/* Badge for Recommended Tier */
+.badge {
+  background-color: orange; /* Match theme color */
+  color: white;
+  padding: 6px 10px;
+  border-radius: 20px;
+  position: absolute;
+  top: -15px;
+  right: 15px;
+  font-size: 0.85em;
+  font-weight: bold;
+  white-space: nowrap;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Get A Quote Section */
+.get-a-quote {
+  margin-top: 4em; /* Adjust margin */
+  margin-bottom: 2em;
+  text-align: center;
+}
+
+.get-a-quote .button {
+  padding: 0.8em 2.5em; /* Adjusted padding for mobile */
+  background-color: orange;
+  font-size: 1.2em; /* Adjusted font size for mobile */
+  font-weight: bold;
+  border: 1px solid orange;
+  border-radius: 15px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.get-a-quote .button:hover {
+  text-decoration: underline;
+  background-color: darkorange;
+  box-shadow: 0 4px 8px rgba(255, 111, 97, 0.5);
+}
+
+
+/** --- DESKTOP OVERRIDES (min-width: 769px) --- */
+@media (min-width: 769px) {
+  .pricing-main {
+    width: 90%; /* Restore wider width for desktop */
+    padding-top: 6.6rem;
+  }
+
+  #title h1 {
+    font-size: 2.5rem; /* Restore desktop font size */
+    margin-top: 1em;
+  }
+
+  .tier-container {
+    flex-direction: row; /* Desktop: Layout columns horizontally */
+    align-items: stretch; /* Make columns stretch to equal height */
+    gap: 30px; /* Restore desktop gap */
+    padding: 20px; /* Restore desktop padding */
+    margin-top: 2em;
+  }
+
+  .tier-column {
+    width: 300px; /* Restore base width for columns */
+    flex-shrink: 1; /* Allow shrinking */
+    flex-grow: 1; /* Allow growing to fill space */
+    display: flex; /* Use flexbox for internal layout */
+    flex-direction: column; /* Stack content inside column */
+    justify-content: space-between; /* Distribute space vertically */
+    margin-bottom: 0; /* Remove mobile margin */
+    /* Add hover effect for non-recommended tiers to compensate for recommended styling */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* ******************************************************************* */
+  /* Key change for top border alignment: */
+  /* Remove transform: scale from the recommended tier on desktop */
+  .tier-column.recommended {
+    transform: none; /* Reset transform for alignment */
+    /* Enhance its visual appeal with stronger shadow or border, as scale is gone */
+    border: 3px solid orange; /* Slightly thicker border for emphasis */
+    box-shadow: 0 10px 25px rgba(255, 111, 97, 0.4); /* Stronger shadow */
+    /* Optional: slightly different background color for more distinction */
+    /* background-color: #2c2d30; */
+    z-index: 1; /* Keep it slightly forward if wanted for badge overlay */
+  }
+  /* ******************************************************************* */
+
+
+  /* Add hover effect for non-recommended tiers to compensate for recommended styling */
+  .tier-column:not(.recommended):hover {
+    transform: translateY(-5px); /* Subtle lift on hover for non-recommended */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Reset spacing adjustments for desktop - flexbox should handle it */
+  .tier-column .tier-description {
+    margin-bottom: 20px;
+  }
+
+  .tier-features {
+    margin-bottom: 20px;
+  }
+
+  /* Ensure nested lists within collapsible content are centered on desktop */
+  .collapsible-content-wrapper .normal-list { /* Use this more specific selector */
+      text-align: center;
+  }
+  .collapsible-content-wrapper .normal-list-item { /* Use this more specific selector */
+      text-align: center;
+  }
+
+
+  /* Get A Quote Section */
+  .get-a-quote {
+    margin-top: 5em;
+    margin-bottom: 3em;
+  }
+
+  .get-a-quote .button {
+    padding: 1em 3em;
+    font-size: 1.5em;
+  }
+}
+
+/* --- DESKTOP OVERRIDES (min-width: 769px) --- */
+@media (min-width: 769px) {
+  .pricing-main {
+    width: 90%;
+    padding-top: 6.6rem;
+  }
+
+  #title h1 {
+    font-size: 2.5rem;
+  }
+
+  .tier-container {
+    flex-direction: row;
+    align-items: stretch; /* Still crucial for making overall cards same height */
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .tier-column {
+    width: 300px;
+    flex-shrink: 1;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 0;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* ******************************************************************* */
+  /* Reintroducing scale and compensating for it */
+  .tier-column.recommended {
+    transform: scale(1.1); /* Bring back the scaling! */
+    border: 3px solid orange; /* Keep the emphasized border */
+    box-shadow: 0 10px 25px rgba(255, 111, 97, 0.4); /* Stronger shadow */
+    z-index: 1;
+
+    /* KEY ADJUSTMENT: Pull the scaled element up by half its scale factor.
+       1.1 scale means it's 10% taller. Half of that is 5% of its height.
+       This is an approximation, you might need to fine-tune this value.
+       A good starting point for a 1.1 scale is -5% or -15px to -25px.
+    */
+    margin-top: -20px; /* Adjust this value to align the top borders */
+    margin-bottom: -20px; /* Counteract margin-top so it doesn't push down siblings */
+  }
+
+  /* Adjust other columns to compensate for the recommended one's margin */
+  .tier-column:not(.recommended) {
+      /* This margin will push the unscaled columns down to align with the scaled one's top */
+      margin-top: 0px; /* Usually 0, but if you lift recommended a lot, you might need +ve here */
+      margin-bottom: 0px; /* Keep consistent */
+  }
+
+  /* ******************************************************************* */
+
+  /* Add hover effect for non-recommended tiers */
+  .tier-column:not(.recommended):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  }
+
+  .tier-column .tier-description {
+    margin-bottom: 20px;
+  }
+
+  /* ******************************************************************* */
+  /* Ensure pricing alignment on desktop - Adjust min-height for tier-features */
+  .tier-features {
+    margin-bottom: 20px;
+    /* This min-height needs to be set *after* the scaling compensation.
+       You'll need to re-evaluate this value by inspecting the browser
+       after the scaling and margin adjustments are in place.
+       Start with a higher value, like 400px-450px, and adjust.
+    */
+    min-height: 420px; /* Adjust this number to align prices across all tiers */
+  }
+  /* ******************************************************************* */
+
+  .collapsible-content-wrapper .normal-list {
+      text-align: center;
+  }
+  .collapsible-content-wrapper .normal-list-item {
+      text-align: center;
+  }
+
+  .get-a-quote {
+    margin-top: 5em;
+    margin-bottom: 3em;
+  }
+
+  .get-a-quote .button {
+    padding: 1em 3em;
+    font-size: 1.5em;
+  }
+
+  /*.foundation-price {
+    padding-top: 100px !important;
+  }*/
+
+  .growth-price {
+    margin-bottom: 4em !important;
+  }
+
+  .evolved-price {
+    margin-bottom: 3.5em !important;
+  }
+
+}
+
+/* Further adjustments for very small mobile screens */
+@media (max-width: 480px) {
+  .pricing-main {
+    padding: 6rem 1rem 1rem;
+    width: 100%;
+  }
+
+  #title h1 {
+    font-size: 2rem;
+  }
+
+  .tier-column {
+    padding: 15px;
+  }
+
+  .tier-column h3 {
+    font-size: 1.6em;
+  }
+
+  .tier-column .tier-description {
+    font-size: 0.9em;
+  }
+
+  .tier-price-range p {
+    font-size: 1.4em;
+  }
+
+  .tier-button {
+    padding: 10px 20px;
+    font-size: 1em;
+  }
+
+}
