@@ -4,17 +4,17 @@
     <meta charset="utf-8">
     <title>Redirecting...</title>
     <script>
-      // Capture the intended path
-      const path = window.location.pathname;
-      const search = window.location.search;
-      const hash = window.location.hash;
-      
-      // Redirect to index.html while preserving the original path
-      window.location.replace('/index.html?redirect=' + 
-        encodeURIComponent(path + search + hash));
+      // Only redirect if this is a direct page access
+      if (!sessionStorage.redirect) {
+        sessionStorage.redirect = true;
+        const path = location.pathname + location.search + location.hash;
+        window.location.replace('/index.html#' + path);
+      } else {
+        sessionStorage.removeItem('redirect');
+      }
     </script>
   </head>
   <body>
-    <p>If you're not redirected automatically, <a href="/">click here</a>.</p>
+    <p>Loading application...</p>
   </body>
 </html>
