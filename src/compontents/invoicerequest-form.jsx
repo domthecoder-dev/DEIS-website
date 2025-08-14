@@ -10,7 +10,7 @@ export default function InvoiceRequestForm() {
   const [submitMessage, setSubmitMessage] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwdjihOAW1uAl9yRlKvSPXXitIRa4yb2Wc7uxjYnpDzEqJpV94TCHs_cqA4YAMvUkGQ/exec';
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzfI9KkEAknqKH5uIinx2QTq07LqnuIguqVjinrkqGLRHulaVPXxvnF-OdijgkAcUbv/exec';
 
   const handleSubmit = async (event) => {
   event.preventDefault();
@@ -21,34 +21,34 @@ export default function InvoiceRequestForm() {
     const payload = {
       customerName,
       customerEmail,
-      cartItems: JSON.stringify(cartItems),
+      cartItems, // No need to stringify twice
       total,
       timestamp: new Date().toISOString()
     };
 
-    // Send as JSON (recommended)
     const response = await fetch(SCRIPT_URL, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json', // Change to JSON
+        'Content-Type': 'application/json', // Required for JSON
       },
-      body: JSON.stringify(payload), // Send as JSON
+      body: JSON.stringify(payload), // Send raw JSON
     });
 
-    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-
+    if (!response.ok) throw new Error(`Server error: ${response.status}`);
+    
     const data = await response.json(); // Parse JSON response
-    setSubmitMessage(data.message || 'Submitted Successfully!');
+    setSubmitMessage(data.message);
     setIsSuccess(data.success);
 
-    // Reset form if successful
+    // Clear form on success
     if (data.success) {
       setCustomerName('');
       setCustomerEmail('');
+      setCartItems([]);
     }
 
   } catch (error) {
-    setSubmitMessage('Error submitting form. Please try again.');
+    setSubmitMessage('Failed to submit. Please try again.');
     console.error('Error:', error);
   } finally {
     setIsSubmitting(false);
