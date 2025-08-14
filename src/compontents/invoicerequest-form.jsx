@@ -10,37 +10,33 @@ export default function InvoiceRequestForm() {
   const [submitMessage, setSubmitMessage] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxsx5CTLKSXyaMrSwi-BIby4LZAwhqq8pixfdjjg9vKNLf1yvlUzGcIJsoRn0EoSRud/exec';
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsSubmitting(true);
-    
-    try {
-      const formData = {
-        name: customerName,
-        email: customerEmail,
-        items: JSON.stringify(itemsInCart), // Stringify the array
-        total: total
-      };
+    setSubmitMessage('');
 
-      const response = await fetch(SCRIPT_URL, {
+    try {
+      const formData = new FormData();
+      formData.append('name', customerName);
+      formData.append('email', customerEmail);
+      formData.append('items', JSON.stringify(itemsInCart));
+      formData.append('total', total);
+
+      const response = await fetch('https://script.google.com/macros/s/AKfycbzURcxJ6Zawtb8xeMRBZpxIEvjhqrmHU00x6YugEATS4g_PY-4z6kFea5cv3VSIBPg/exec', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        body: new URLSearchParams(formData).toString()
+        body: formData
       });
 
-      if (response.ok) {
-        setIsSuccess(true);
-        setSubmitMessage('Form Submitted Successfully!');
-      } else {
-        throw new Error('Network response was not ok');
-      }
+      if (!response.ok) throw new Error('Network response was not ok');
+
+      const result = await response.json();
+      setIsSuccess(true);
+      setSubmitMessage('Invoice requested successfully!');
+
     } catch (error) {
-      console.error('Error submitting form:', error);
-      setSubmitMessage('There was an error submitting your form. Please try again.');
+      console.error('Error:', error);
+      setSubmitMessage('Failed to submit. Please try again later.');
       setIsSuccess(false);
     } finally {
       setIsSubmitting(false);
