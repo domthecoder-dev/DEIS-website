@@ -14,30 +14,65 @@ export default function InvoiceRequestForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsSubmitting(true);
-    setSubmitMessage('');
+    setSubmitMessage("");
+
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzf0ALeFpl1qT8o3lDV7vTmK6EOJYfAmYo5DjlAOYx3vOXubHf6NBna5_ZchQK9Y-ns/exec";
 
     try {
-      const formData = new FormData();
-      formData.append('name', customerName);
-      formData.append('email', customerEmail);
-      formData.append('items', JSON.stringify(itemsInCart));
-      formData.append('total', total);
-
-      const response = await fetch('https://script.google.com/macros/s/AKfycbzURcxJ6Zawtb8xeMRBZpxIEvjhqrmHU00x6YugEATS4g_PY-4z6kFea5cv3VSIBPg/exec', {
-        method: 'POST',
-        body: formData
+      // 1. Try with JSON first
+      const jsonResponse = await fetch(SCRIPT_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: customerName,
+          email: customerEmail,
+          items: itemsInCart,
+          total: total,
+        }),
       });
 
-      if (!response.ok) throw new Error('Network response was not ok');
+      const result = await jsonResponse.json();
+      console.log("JSON Response:", result);
 
-      const result = await response.json();
-      setIsSuccess(true);
-      setSubmitMessage('Invoice requested successfully!');
+      if (result.status === "success") {
+        setIsSuccess(true);
+        setSubmitMessage("Invoice requested successfully!");
+        return;
+      } else {
+        throw new Error(result.message || "Server error");
+      }
 
-    } catch (error) {
-      console.error('Error:', error);
-      setSubmitMessage('Failed to submit. Please try again later.');
-      setIsSuccess(false);
+    } catch (jsonError) {
+      console.log("JSON failed, trying FormData...", jsonError);
+
+      // 2. Fallback to FormData if JSON fails
+      try {
+        const formData = new FormData();
+        formData.append("name", customerName);
+        formData.append("email", customerEmail);
+        formData.append("items", JSON.stringify(itemsInCart));
+        formData.append("total", total);
+
+        const formResponse = await fetch(SCRIPT_URL, {
+          method: "POST",
+          body: formData,
+        });
+
+        const result = await formResponse.json();
+        console.log("FormData Response:", result);
+
+        if (result.status === "success") {
+          setIsSuccess(true);
+          setSubmitMessage("Invoice requested successfully!");
+        } else {
+          throw new Error(result.message || "FormData submission failed");
+        }
+
+      } catch (formError) {
+        console.error("FormData failed:", formError);
+        setSubmitMessage("Failed to submit. Please try again later.");
+        setIsSuccess(false);
+      }
     } finally {
       setIsSubmitting(false);
     }
