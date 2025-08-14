@@ -19,7 +19,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build && copy public\\CNAME build\\ && copy public\\404.html build\\",
+    "predeploy": "npm run build && xcopy public\\CNAME build\\ /Y & xcopy public\\404.html build\\ /Y",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
