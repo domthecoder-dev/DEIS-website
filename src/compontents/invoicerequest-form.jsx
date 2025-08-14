@@ -16,7 +16,7 @@ export default function InvoiceRequestForm() {
     setIsSubmitting(true);
     setSubmitMessage("");
 
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzp5AVa2gy38Ce-xVfdGNzQ7jpmLv6yzRZhCVtO6FYnFVX0UiCYpNfSZeQyxSL9r9g_/exec"; // Must be updated!
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw_Ry7m1WhHrHNY0LfPS4Y0GazJyPcFd4UqU7XAMzFi31CypaCS_aa621Tll5SnYncl/exec"; // Must be updated!
 
     try {
       // ✅ 1. Try JSON first
