@@ -3,7 +3,8 @@ import { useCart } from '../Logic/CartContents';
 import '../styles/cart-page.css';
 
 export default function InvoiceRequestForm() {
-  const { cartItems, total } = useCart();
+  const {total } = useCart();
+const [cartItems, setCartItems] = useState([]);
   const [customerName, setCustomerName] = useState('');
   const [customerEmail, setCustomerEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
