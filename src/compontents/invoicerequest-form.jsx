@@ -3,44 +3,36 @@ import { useCart } from '../Logic/CartContents';
 import '../styles/cart-page.css';
 
 export default function InvoiceRequestForm() {
-  const { cartItems: itemsInCart, total } = useCart(); // Assuming useCart returns cartItems
+  const { cartItems: itemsInCart, total } = useCart();
   const [customerName, setCustomerName] = useState('');
   const [customerEmail, setCustomerEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState('');
   const [isSuccess, setIsSuccess] = useState(false);
 
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     setIsSubmitting(true);
     setSubmitMessage("");
 
-    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw_Ry7m1WhHrHNY0LfPS4Y0GazJyPcFd4UqU7XAMzFi31CypaCS_aa621Tll5SnYncl/exec"; // Must be updated!
-
     try {
-      // ✅ 1. Try JSON first
-      const response = await fetch(SCRIPT_URL, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: customerName,
-          email: customerEmail,
-          items: itemsInCart,
-          total: total,
-        }),
+      const form = event.target;
+      form.action = `https://formsubmit.co/dominic3lliott@gmail.com`;
+      form.method = "POST";
+      
+      const formData = new FormData(form);
+      formData.append("_subject", `New Invoice Request from ${customerName || 'Customer'}`);
+      formData.append("_captcha", "false");
+      formData.append("items", JSON.stringify(itemsInCart || []));
+      formData.append("total", (total || 0).toString());
+
+      await fetch(form.action, {
+        method: form.method,
+        body: formData
       });
 
-      const result = await response.json();
-      console.log("Server response:", result);
-
-      if (result.status === "success") {
-        setIsSuccess(true);
-        setSubmitMessage("✅ Invoice request sent!");
-      } else {
-        throw new Error(result.message || "Server error");
-      }
-
+      setIsSuccess(true);
+      setSubmitMessage("✅ Invoice request sent!");
     } catch (error) {
       console.error("Error:", error);
       setSubmitMessage("❌ Failed to submit. Please try again.");
@@ -61,11 +53,12 @@ export default function InvoiceRequestForm() {
 
       {!isSuccess ? (
         <form onSubmit={handleSubmit} className="invoice-form" id="invoice-form">
+          <input type="hidden" name="_next" value={window.location.href} />
           <label htmlFor="customerName" className="form-label">Name:</label>
           <input
             type="text"
             id="customerName"
-            name="customerName"
+            name="name"
             className="form-input"
             value={customerName}
             onChange={(e) => setCustomerName(e.target.value)}
@@ -76,7 +69,7 @@ export default function InvoiceRequestForm() {
           <input
             type="email"
             id="customerEmail"
-            name="customerEmail"
+            name="email"
             className="form-input"
             value={customerEmail}
             onChange={(e) => setCustomerEmail(e.target.value)}
