@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.dc29cb1c.css",
-    "main.js": "/static/js/main.abe676f9.js",
+    "main.js": "/static/js/main.5f108847.js",
     "static/media/cart-icon.png": "/static/media/cart-icon.e70a83a97fd54a45f646.png",
     "static/media/services.png": "/static/media/services.ee9e3795656236744875.png",
     "static/media/article2-laptop-mobile.jpeg": "/static/media/article2-laptop-mobile.4185ceaa1cf0636ce26d.jpeg",
@@ -36,10 +36,10 @@
     "static/media/Logo-Rect.png": "/static/media/Logo-Rect.940b5a65295eb267788f.png",
     "index.html": "/index.html",
     "main.dc29cb1c.css.map": "/static/css/main.dc29cb1c.css.map",
-    "main.abe676f9.js.map": "/static/js/main.abe676f9.js.map"
+    "main.5f108847.js.map": "/static/js/main.5f108847.js.map"
   },
   "entrypoints": [
     "static/css/main.dc29cb1c.css",
-    "static/js/main.abe676f9.js"
+    "static/js/main.5f108847.js"
   ]
 }
