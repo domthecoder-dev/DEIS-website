@@ -15,45 +15,41 @@ export default function InvoiceRequestForm() {
     setIsSubmitting(true);
     setSubmitMessage("");
 
+
+    const simplifiedItems = itemsInCart.map(item => ({
+      name: item.name,
+      quantity: item.quantity,
+      price: item.price
+    }));
+
     try {
-      // Create a simplified list of items with only the required fields
-      const simplifiedItems = itemsInCart.map(item => ({
-        name: item.name,
-        quantity: item.quantity,
-        price: item.price
-      }));
+      const form = event.target;
+      form.action = `https://formsubmit.co/c3b2341dd7554351377e17d1af07ab90`;
+      form.method = "POST";
 
-      // Create a single data object to send as JSON
-      const data = {
-        _subject: `New Invoice Request from ${customerName || 'Customer'}`,
-        _captcha: "false",
-        items: simplifiedItems,
-        total: total || 0,
-        name: customerName,
-        email: customerEmail,
-        // The URL to redirect to after submission. Remove if you don't want a redirect.
-        _next: window.location.href
-      };
+      const formData = new FormData(form);
+      formData.append("_subject", `New Invoice Request from ${customerName || 'Customer'}`);
+      formData.append("_captcha", "false");
+      formData.append("items", JSON.stringify(simplifiedItems || []));
+      formData.append("total", (total || 0).toString());
 
-      // Use a direct fetch call with a JSON body
-      await fetch("https://formsubmit.co/ajax/c3b2341dd7554351377e17d1af07ab90", {
-        method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(data)
+      await fetch(form.action, {
+        method: form.method,
+        body: formData
       });
 
       setIsSuccess(true);
       setSubmitMessage("✅ Invoice request sent!");
+
     } catch (error) {
       console.error("Error:", error);
       setSubmitMessage("❌ Failed to submit. Please try again.");
       setIsSuccess(false);
     } finally {
       setIsSubmitting(false);
+
     }
+
   };
 
   return (
