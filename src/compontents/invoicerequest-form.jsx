@@ -23,23 +23,26 @@ export default function InvoiceRequestForm() {
         price: item.price
       }));
 
-      // Format the simplified items for the form data
-      const formattedItems = JSON.stringify(simplifiedItems, null, 2);
+      // Create a single data object to send as JSON
+      const data = {
+        _subject: `New Invoice Request from ${customerName || 'Customer'}`,
+        _captcha: "false",
+        items: simplifiedItems,
+        total: total || 0,
+        name: customerName,
+        email: customerEmail,
+        // The URL to redirect to after submission. Remove if you don't want a redirect.
+        _next: window.location.href
+      };
 
-      const form = event.target;
-      form.action = `https://formsubmit.co/c3b2341dd7554351377e17d1af07ab90`;
-      form.method = "POST";
-      
-      const formData = new FormData(form);
-      formData.append("_subject", `New Invoice Request from ${customerName || 'Customer'}`);
-      formData.append("_captcha", "false");
-      // Append the simplified, formatted items instead of the full object
-      formData.append("items", formattedItems);
-      formData.append("total", (total || 0).toString());
-
-      await fetch(form.action, {
-        method: form.method,
-        body: formData
+      // Use a direct fetch call with a JSON body
+      await fetch("https://formsubmit.co/ajax/c3b2341dd7554351377e17d1af07ab90", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(data)
       });
 
       setIsSuccess(true);
@@ -64,7 +67,7 @@ export default function InvoiceRequestForm() {
 
       {!isSuccess ? (
         <form onSubmit={handleSubmit} className="invoice-form" id="invoice-form">
-          <input type="hidden" name="_next" value={window.location.href} />
+          {/* Note: _next field is now handled in the data object for the AJAX call */}
           <label htmlFor="customerName" className="form-label">Name:</label>
           <input
             type="text"
