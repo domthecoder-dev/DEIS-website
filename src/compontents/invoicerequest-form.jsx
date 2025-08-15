@@ -16,6 +16,16 @@ export default function InvoiceRequestForm() {
     setSubmitMessage("");
 
     try {
+      // Create a simplified list of items with only the required fields
+      const simplifiedItems = itemsInCart.map(item => ({
+        name: item.name,
+        quantity: item.quantity,
+        price: item.price
+      }));
+
+      // Format the simplified items for the form data
+      const formattedItems = JSON.stringify(simplifiedItems, null, 2);
+
       const form = event.target;
       form.action = `https://formsubmit.co/c3b2341dd7554351377e17d1af07ab90`;
       form.method = "POST";
@@ -23,7 +33,8 @@ export default function InvoiceRequestForm() {
       const formData = new FormData(form);
       formData.append("_subject", `New Invoice Request from ${customerName || 'Customer'}`);
       formData.append("_captcha", "false");
-      formData.append("items", JSON.stringify(itemsInCart || []));
+      // Append the simplified, formatted items instead of the full object
+      formData.append("items", formattedItems);
       formData.append("total", (total || 0).toString());
 
       await fetch(form.action, {

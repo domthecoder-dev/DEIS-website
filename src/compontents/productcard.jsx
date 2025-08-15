@@ -34,7 +34,7 @@ export default function ProductCard({ product }) {
           <h3 className="product-name">{product.name}</h3>
           {/* ⭐ Conditionally render the price based on whether it's a service ⭐ */}
           <p className="product-price">
-            {isService ? `${product.price}` : `R${product.price}`}
+            {isService ? `R${product.price}` : `R${product.price}`}
           </p>
         </div>
       </Link>

@@ -80,7 +80,7 @@ export default function ProductsPage() {
     }
 
     setFilteredProducts(currentFilteredProducts);
-  }, [searchParams]);
+  }, [searchTerm, selectedCategory, selectedType, selectedConnectivity]); // ⭐ Updated dependencies here ⭐
 
   return (
     <div className="products-page-container">

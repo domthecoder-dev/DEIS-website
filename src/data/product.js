@@ -235,7 +235,7 @@ What's in the box
     name: 'Website Package: Foundation Website',
     category: 'services',
     type: 'Websites', // ⭐ Added new type property ⭐
-    price: `R2000 to R8000`,
+    price: `2000 to R 8000`,
     description: `Ideal for very small businesses, startups or individuals needing a basic online presence. Foundation focuses on a clean, responsive design with essential information.`,
     features: [
       'Up to 5 static pages',
@@ -256,7 +256,7 @@ What's in the box
     name: 'Website Package: Growth Website',
     category: 'services',
     type: 'Websites', // ⭐ Added new type property ⭐
-    price: `R9000 to R19000`,
+    price: `9000 to R 19000`,
     description: `Suited for growing small to medium-sized businesses needing a more professional and feature-rich website.`,
     features: [
       'Up to 15 pages with more complex layouts',
@@ -277,7 +277,7 @@ What's in the box
     name: 'Website Package: Evolved Website',
     category: 'services',
     type: 'Websites', // ⭐ Added new type property ⭐
-    price: "R20000+",
+    price: "20000+",
     description: `For businesses requiring advanced features, custom functionality or e-commerce capabilities.`,
     features: [
       '15+ pages with unique and complex designs',

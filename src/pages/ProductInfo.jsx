@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import products from '../data/product';
-import { useCart } from '../Logic/CartContents'; // <--- Import useCart hook
+import { useCart } from '../Logic/CartContents';
 import '../styles/product-info.css';
 
 export default function ProductInfo() {
   const { productId } = useParams();
   const navigate = useNavigate();
-  const { addToCart } = useCart(); // <--- Access addToCart from the cart context
+  const { addToCart } = useCart();
 
   const [product, setProduct] = useState(null);
   const [mainImage, setMainImage] = useState('');
-  const [quantity, setQuantity] = useState(1); // State for quantity selector
+  const [quantity, setQuantity] = useState(1);
 
   useEffect(() => {
     const foundProduct = products.find(p => p.id === productId);
@@ -21,7 +21,7 @@ export default function ProductInfo() {
       if (foundProduct.images && foundProduct.images.length > 0) {
         setMainImage(foundProduct.images[0]);
       }
-      setQuantity(1); // Reset quantity to 1 when a new product is loaded
+      setQuantity(1);
     } else {
       navigate('/products');
     }
@@ -32,40 +32,46 @@ export default function ProductInfo() {
   };
 
   const handleQuantityChange = (e) => {
-    const inputValue = e.target.value; // Get the raw string value
-
-    // Allow empty string or numbers
+    const inputValue = e.target.value;
     if (inputValue === '' || /^\d+$/.test(inputValue)) {
-      setQuantity(inputValue); // Set state to raw string (empty or numeric string)
+      setQuantity(inputValue);
     }
-    // Optionally, if you want to prevent non-digit input:
-    // else if (!/^\d*$/.test(inputValue)) {
-    //   // If it contains non-digits, don't update state
-    //   return;
-    // }
   };
 
   const handleQuantityBlur = () => {
     let numericQuantity = parseInt(quantity);
     if (isNaN(numericQuantity) || numericQuantity < 1) {
-      setQuantity(1); // Default to 1 if empty or invalid after blurring
+      setQuantity(1);
     } else {
-      setQuantity(numericQuantity); // Ensure it's a number, not a string "1"
+      setQuantity(numericQuantity);
     }
+  };
+
+  const handleDecreaseQuantity = () => {
+    setQuantity(prevQuantity => Math.max(prevQuantity - 1, 1));
+  };
+
+  const handleIncreaseQuantity = () => {
+    setQuantity(prevQuantity => prevQuantity + 1);
   };
 
   const handleAddToCart = () => {
     if (product) {
-      // ⭐ UPDATED: Ensure quantity is a valid number before adding to cart
       const quantityToAdd = parseInt(quantity);
       if (isNaN(quantityToAdd) || quantityToAdd < 1) {
-        alert("Please enter a valid quantity (at least 1).");
-        setQuantity(1); // Reset to 1 if invalid
+        // You should use a custom modal for this instead of alert()
+        console.error("Please enter a valid quantity (at least 1).");
+        setQuantity(1);
         return;
       }
       addToCart(product, quantityToAdd);
-      // Optionally reset quantity to 1 after adding to cart
     }
+  };
+
+  // Handler for the "Get a Quote" button
+  const handleGetQuote = () => {
+    // Navigate to the quote page
+    navigate('/quote');
   };
 
   if (!product) {
@@ -100,10 +106,48 @@ export default function ProductInfo() {
         {/* Product Details */}
         <div className="product-details">
           <h1 className="product-details-name">{product.name}</h1>
-
+          
           <div className="product-details-price">
             <p>R {product.price}</p>
           </div>
+
+          {/* Conditional Action Section */}
+          {product.category === 'services' ? (
+            <div className="product-actions-service">
+              <button 
+                className="get-quote-button" 
+                onClick={handleGetQuote}
+              >
+                Get a Quote
+              </button>
+            </div>
+          ) : (
+            <div className="product-actions">
+              <div className="quantity-selector">
+                <label htmlFor="quantity">Quantity:</label>
+                <div className="quantity-controls">
+                  <button className="quantity-button" onClick={handleDecreaseQuantity}>-</button>
+                  <input
+                    type="text"
+                    pattern="[0-9]*"
+                    inputMode="numeric"
+                    id="quantity-input"
+                    min="1"
+                    value={quantity}
+                    onChange={handleQuantityChange}
+                    onBlur={handleQuantityBlur}
+                    className="quantity-input"
+                    aria-label="Product quantity"
+                  />
+                  <button className="quantity-button" onClick={handleIncreaseQuantity}>+</button>
+                </div>
+              </div>
+              <button className="add-to-cart-button" onClick={handleAddToCart}>
+                Add to Cart
+              </button>
+            </div>
+          )}
+          {/* End of Conditional Section */}
 
           <div className="product-description-section">
             <h3 className="section-title">Description</h3>
@@ -132,28 +176,6 @@ export default function ProductInfo() {
               </ul>
             </div>
           )}
-
-          {/* Quantity and Add to Cart */}
-          <div className="product-actions">
-            <div className="quantity-selector">
-              <label htmlFor="quantity">Quantity:</label>
-              <input
-                type="text" // ⭐ IMPORTANT: Use type="text" to allow empty string
-                pattern="[0-9]*" // Suggests number input for mobile keyboards
-                inputMode="numeric" // Suggests numeric keyboard on mobile
-                id="quantity-input"
-                min="1" // HTML5 min attribute is still good for validation/semantics
-                value={quantity} // Bind to state, which can be ""
-                onChange={handleQuantityChange}
-                onBlur={handleQuantityBlur} // ⭐ NEW: Handle blur event
-                className="quantity-input"
-                aria-label="Product quantity"
-              />
-            </div>
-            <button className="add-to-cart-button" onClick={handleAddToCart}>
-              Add to Cart
-            </button>
-          </div>
 
           {/* Stock, Rating etc. can go here */}
           <div className="product-meta">

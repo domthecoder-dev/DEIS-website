@@ -44,8 +44,8 @@
 
 .search-input:focus {
   outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  border-color: #f97316; /* Orange focus color */
+  box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
 }
 
 /* Main Content Wrapper (Sidebar + Product List) */
@@ -55,16 +55,14 @@
   gap: 2rem; /* Gap between sidebar and product list */
 }
 
-/* Filter Sidebar (Mobile Hidden / Collapsible) */
+/* Filter Sidebar (Mobile Centered) */
 .filter-sidebar {
   background-color: #2e2e2eb4;
   border-radius: 0.5rem;
   padding: 1.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   width: 86%; /* Full width on mobile */
-  margin-right: 2rem;
-  /* Initially hide on mobile, or display differently (e.g., toggle button) */
-  /* For now, we'll keep it simple and just let it stack */
+  margin: 0 auto; /* ⭐ NEW: Center the filter on mobile ⭐ */
 }
 
 .filter-sidebar h3 {
@@ -131,7 +129,7 @@
     flex-shrink: 0; /* Prevent sidebar from shrinking */
     position: sticky; /* Sticky sidebar */
     top: 110px; /* Adjust sticky position if you have a fixed header */
-    margin: 0;
+    margin: 0; /* ⭐ Reset margin for desktop alignment ⭐ */
   }
 
   .product-list-grid {
