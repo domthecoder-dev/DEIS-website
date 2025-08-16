@@ -1,7 +1,7 @@
 // src/pages/AboutPage.js
 import React from 'react';
-import Sam from '../Images/Samantha-Avatar.jpg';
-import Dom from '../Images/Dominic-Avatar.jpg';
+import SamImg from '../Images/Samantha-Avatar.jpg';
+import DomImg from '../Images/Dominic-Avatar.jpg';
 import Image2 from '../Images/Girlsittingatcomputercoding.jpg';
 import Image3 from '../Images/HandsCodingOnLaptop.jpg';
 import { Link } from 'react-router-dom';
@@ -18,93 +18,38 @@ function AboutPage() {
   return (
     <div id="aboutuspage-main-wrapper" className="about-us-main">
       <div className="container">
-        <section id="Meet-the-team">
-          <h1 className="section-header">Meet the Team</h1>
-          <div className="team-members-grid"> {/* NEW: Grid for team members */}
-            {/* Samantha's Card */}
-            <FlipCard
-              className="team-flip-card" // Specific class for team cards
-              frontContent={
-                <>
-                  <div className="avatar-container">
-                    <img src={Sam} className='avatar' alt="Samantha Avatar" />
-                  </div>
-                  <h3>Samantha</h3>
-                  <p>Client Liaison & Admin</p>
-                </>
-              }
-              backContent={
-                <>
-                  <p>Your dedicated point of contact, ensuring seamless communication and a smooth web development journey from start to finish.</p>
-                </>
-              }
-            />
+        <div className="AB-ContentSeciton1">
+        <h2 className="CS1-Header">Meet the Team!</h2>
+        {/*
+          This is the single flex container that will hold all the people.
+          The CSS you wrote for CS1-Person-Container will now apply to all the items inside it.
+        */}
+        <div className="CS1-Person-Container">
+          <div className="CS1-Person">
+            <p className="Person-Name">Dominic E.</p>
+            <div className="PImage-Container">
+              <img className="Image" src={DomImg} alt="cartoon drawing of a men"></img>
+            </div>
+            <div className="Person-Description">
+              <p className="role">Founder and Lead Website Developer</p>
+              <p className="details">The expert behind the code, crafting personalized and cutting-edge websites that perfectly reflect your vision and goals.</p>
+            </div>
+          </div>
+          {/*New Person Code*/}
+          <div className="CS1-Person">
+            <p className="Person-Name">Samantha N.</p>
+            <div className="PImage-Container">
+              <img className="Image" src={SamImg} alt="cartoon drawing of a women"></img>
+            </div>
+            <div className="Person-Description">
+              <p className="role">Client Liaison & Admin</p>
+              <p className="details">Your dedicated point of contact, ensuring seamless communication and a smooth web development journey from start to finish.</p>
+            </div>
+          </div>
+        </div>
+      </div>
 
-            {/* Dominic's Card */}
-            <FlipCard
-              className="team-flip-card" // Specific class for team cards
-              frontContent={
-                <>
-                  <div className="avatar-container">
-                    <img src={Dom} className="avatar" alt="Dominic Avatar" />
-                  </div>
-                  <h3>Dominic</h3>
-                  <p>Lead Website Developer</p>
-                </>
-              }
-              backContent={
-                <>
-                  <p>The expert behind the code, crafting personalized and cutting-edge websites that perfectly reflect your vision and goals.</p>
-                </>
-              }
-            />
-          </div>
-        </section>
-
-        <section className="about-intro">
-          <div className="image-column">
-            <img src={Image2} id="Img-GirlCoding" alt="Girl coding on a computer" />
-          </div>
-          <div className="text-column">
-            <h1 className="page-header">Crafting Your Digital Presence with Expertise and Care</h1>
-            {/* CONDENSED TEXT */}
-            <p className="body-text">
-              At DE Innovative Solutions, we craft stunning, effective websites tailored to your online goals.
-              We offer a personalized, hands-on approach, leveraging powerful platforms like WordPress and reliable
-              hosting to create your unique digital presence.
-            </p>
-            <p className="body-text">
-              With over five years dedicated to web development, Dominic (founder of DE Innovative Solutions), believes a
-              website is a crucial tool for growth and brand identity. We go beyond basics, using advanced coding
-              (CSS, HTML) for enhanced SEO and truly customized, standout designs.
-            </p>
-            <p className="body-text">
-              Backed by certifications in Responsive Web Design and JavaScript, we ensure your site is beautiful,
-              user-friendly across all devices, and built to modern web standards. Our commitment extends to
-              exceptional customer care, with dedicated support throughout your website journey.
-            </p>
-          </div>
-        </section>
-
-        <section className="what-sets-apart">
-          <div className="text-column">
-            <h1 className="section-header">What Sets Us Apart:</h1>
-            <ul className="features-list">
-              <li>**Expert WordPress Development:** Robust and scalable websites.</li>
-              <li>**Reliable Xneelo Hosting:** Fast, secure, always accessible.</li>
-              <li>**Personalized Customization:** Unique designs, tailored functionalities.</li>
-              <li>**SEO Optimization:** Strategic meta tags, improved search visibility.</li>
-              <li>**Responsive Design:** Flawless across all devices.</li>
-              <li>**Dedicated Customer Care:** Exceptional support, every step.</li>
-              <li>**Proven Experience:** Over five years delivering successful solutions.</li>
-            </ul>
-          </div>
-          <div className="image-column">
-            <img src={Image3} className="coding-laptop-img" alt="Hands coding on a laptop" />
-          </div>
-        </section>
-
-        <section className="websites-we-build">
+      <section className="websites-we-build">
           <h1 className="section-header">What Websites Do we Build?</h1>
           <p className="body-text">
             We build all kinds of websites, including:
@@ -201,10 +146,25 @@ function AboutPage() {
               />
             )}
           </div> {/* End websites-grid */}
-          <p className="body-text">
-            Contact us for your <Link to="/quote">personalised quote</Link>
-          </p>
         </section>
+
+        <section className="what-sets-apart">
+          <div className="image-column">
+            <img src={Image3} className="coding-laptop-img" alt="Hands coding on a laptop" />
+          </div>
+          <div className="text-column">
+            <h1 className="section-header">What Sets Us Apart:</h1>
+            <ul className="features-list">
+              <li><b>Expert WordPress Development:</b> Robust and scalable websites.</li>
+              <li><b>Reliable Xneelo Hosting:</b> Fast, secure, always accessible.</li>
+              <li><b>Personalized Customization:</b> Unique designs, tailored functionalities.</li>
+              <li><b>SEO Optimization:</b> Strategic meta tags, improved search visibility.</li>
+              <li><b>Responsive Design:</b> Flawless across all devices.</li>
+              <li><b>Dedicated Customer Care:</b> Exceptional support, every step.</li>
+              <li><b>Proven Experience:</b> Over five years delivering successful solutions.</li>
+            </ul>
+          </div>
+        </section>  
       </div>
     </div>
   );

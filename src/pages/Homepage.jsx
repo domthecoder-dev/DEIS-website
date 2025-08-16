@@ -85,7 +85,7 @@ function newHomepage() {
                     <div className="cs3-header">Get In Touch</div>
                     <div className="cs3-contact">
                         <div className="cs3-con-icon">✓</div>
-                        <div className="cs3-con-link">Email: deinnovativesolutions@gmail.com</div>
+                        <div className="cs3-con-link">Email:<br className="mobile-br"/> deinnovativesolutions@gmail.com</div>
                     </div>
                     <div className="cs3-contact">
                         <div className="cs3-con-icon">✓</div>
@@ -93,7 +93,7 @@ function newHomepage() {
                     </div>
                     <div className="cs3-contact">
                         <div className="cs3-con-icon">✓</div>
-                        <div className="cs3-con-link">Instagram: @deinnovativesolutions</div>
+                        <div className="cs3-con-link">Instagram:<br className="mobile-br"/> @deinnovativesolutions</div>
                     </div>
                 </div>
             </div>

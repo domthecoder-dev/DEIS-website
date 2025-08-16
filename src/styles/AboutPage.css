@@ -8,7 +8,7 @@
   display: flex;
   flex-direction: column; /* Stack sections vertically */
   align-items: center; /* Center items horizontally within main */
-  padding-top: 6.6rem; /* Adjust top padding for fixed header */
+  padding-top: 3rem; /* Adjust top padding for fixed header */
   padding-bottom: 2rem;
   width: 95%; /* More margin on very small mobile */
   margin: 0 auto; /* Center the main container itself */
@@ -169,27 +169,49 @@
   color: orange; /* Or any accent color */
 }
 
-/* --- Meet the Team Section (Mobile: Stacked Members) --- */
-#Meet-the-team {
-  background-color: #37383b;
-  padding: 2rem 1.5rem; /* Reduced padding for mobile */
+.CS1-Header {
+  font-size: 2rem;
   text-align: center;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 2rem;
 }
 
-/* The grid for team members (will stack on mobile) */
-.team-members-grid {
+.CS1-Person-Container {
+  /* No Code Yet*/
   display: flex;
-  flex-direction: column; /* Stack team cards vertically on mobile */
-  gap: 2rem; /* Space between team cards */
-  align-items: center; /* Center the cards */
+  flex-direction: column;
+  justify-content: center;
 }
 
-/* (The styling for .mobile-card-wrapper, .mobile-card-front-content, etc.
-    from FlipCard.css will apply here for the mobile team member display) */
+.CS1-Person {
+  background-color: #37383b; /* Don't forget to change*/
+  width: 95%;
+  border: 1px solid white;
+  padding: 0.5px 20px;
+  margin-bottom: 2rem;
+  border-radius: 5%;
+}
 
+.Person-Name {
+  font-weight: bold;
+  font-size: 1.8rem;
+  margin: 0;
+  text-align: center;
+}
+
+.PImage-Container {
+  display: flex;
+  justify-content: center;
+}
+
+.Image {
+  width: 9rem;
+  height: 9rem;
+}
+
+.role {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.1rem;
+}
 
 /* --- DESKTOP OVERRIDES (min-width: 769px) --- */
 /* These styles only apply on screens 769px and wider, overriding mobile defaults. */
@@ -285,21 +307,40 @@
     display: none; /* Hide the simple list items on desktop */
   }
 
-  /* Meet the Team Section (Desktop: Grid of Flip Cards) */
-  #Meet-the-team {
-    padding: 3rem 2rem; /* Restore desktop padding */
-    margin-bottom: 2rem;
-  }
+  .AB-ContentSeciton1 {
+        justify-content: left;
+        margin: 0.5rem;
+    }
+    .CS1-Header {
+        text-align: left;
+        color: white; /* Filler Setting, change when applicable*/
+    }
+    .CS1-Person-Container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 20px; /* Optional but recommended for spacing */
+    }
+    .CS1-Person {
+        background-color: #37383bcb; /* Don't forget to change*/
+        flex: 1 1 auto; /* Corrected property to allow items to be in a row */
+        border: 1px solid white;
+        padding: 0.5px 20px;
+        margin-bottom: 2rem;
+    }
+    .Person-Name {
+        font-weight: bold;
+        font-size: 1.8rem;
+        margin: 0;
+        text-align: center;
+    }
+    .PImage-Container {
+        display: flex;
+        justify-content: center;
+    }
+    .Image {
+        width: 9rem;
+        height: 9rem;
+    }
 
-  .team-members-grid {
-    display: grid; /* Use CSS Grid for desktop */
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive columns */
-    gap: 2rem; /* Space between cards */
-    justify-items: center; /* Center items within grid cells */
-  }
-
-  /* Hide the old bio elements when FlipCard is used on desktop */
-  #Meet-the-team .team-member {
-    display: none; /* Hide the original team member div as FlipCard replaces it */
-  }
 }
