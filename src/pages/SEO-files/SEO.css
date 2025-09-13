@@ -1,0 +1,257 @@
+.SEO-page-container {
+    Width: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding-top: 112px;
+    font-family: Montserrat, sans-serif;
+    color: white;
+}
+
+.SEO-hero {
+    height: 70vh;
+    width: 100%;
+    justify-items: center;
+    align-content: center;
+    background-image: url('../../Images/SEO-hero.png');
+    background-size: cover;
+    background-position: center calc(100% + 100px);
+    background-attachment: fixed;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.SEO-hero-content {
+    background-color: rgba(0, 0, 0, 0.624);
+    border-radius: 10px;
+    backdrop-filter: blur(9px);
+    padding: 2rem 3rem;
+    width: 75%;
+    text-align: center;
+}
+
+.SEO-hero h1 {
+    font-size: 2.6rem;
+}
+
+.What-is-SEO {
+    margin-left: 25px;
+}
+
+.What-is-SEO h1 {
+    font-size: 2.7rem;
+}
+
+.What-is-SEO p {
+    font-size: 1.7rem;
+}
+
+.section-normalbackground {
+    background-image: url('../../Images/background-color.jpg');
+    background-size: cover;
+    background-position: center calc(100% + 12rem);
+    background-attachment: fixed;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.SEO-philo {
+    height: auto;
+    min-height: 40vh;
+    width: 60%;
+    margin: 2rem auto;
+    margin-bottom: 3rem;
+    text-align: center;
+    justify-items: center;
+    align-content: center;
+    background-color: rgba(0, 0, 0, 0.624);
+    border-radius: 10px;
+    backdrop-filter: blur(9px);
+}
+
+.SEO-philo h1 {
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+}
+
+.SEO-philo p {
+    font-size: 1.7rem;
+}
+
+.SEO-audit {
+    height: auto;
+    min-height: 40vh;
+    width: 60%;
+    margin: 2rem auto;
+    margin-bottom: 2rem;
+    text-align: left;
+    background-color: rgba(0, 0, 0, 0.624);
+    border-radius: 10px;
+    backdrop-filter: blur(9px);
+}
+
+.SEO-audit h1 {
+    font-size: 2.6rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.SEO-audit ul {
+    list-style-type: "✓   ";
+    margin: 0.1rem 1rem;
+}
+
+.SEO-audit li {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+
+
+.SEO-packages-title {
+    text-align: center;
+    font-size: 2.6rem;
+}
+
+.SEO-packages {
+    height: auto;
+    min-height: 35vh;
+    width: 95%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-self: center;
+    padding-bottom: 5rem;
+
+}
+
+.package {
+    flex: 1;
+    justify-items: center;
+    align-content: center;
+    background-color: rgba(0, 0, 0, 0.624);
+    border-radius: 10px;
+    backdrop-filter: blur(9px);
+}
+
+.package-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.package-description {
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1rem 5rem;
+}
+
+.SEO-FAQ {
+    min-height: 60vh;
+    width: 100%;
+    justify-items: center;
+    align-content: center;
+    background-image: url('../../Images/background-color.jpg');
+    background-size: cover;
+    background-position: center calc(100% + 12rem);
+    background-attachment: fixed;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.FAQ-item {
+    background-color: rgba(0, 0, 0, 0.624);
+    width: 60%;
+    margin-bottom: 15px;
+    border-radius: 10px;
+}
+
+.FAQ-item-c {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 90px; 
+}
+
+.FAQ-question-c {
+    border-bottom: 1px solid darkgrey;
+}
+
+.FAQ-icon {
+    font-size: 1.7rem;
+    padding-right: 50px;
+    padding-left: 10px;
+}
+
+.FAQ-question {
+    font-size: 1.5rem;    
+}
+
+.FAQ-answer {
+    font-size: 1.3rem;
+}
+
+@media (max-width: 768px) {
+    .SEO-page-container {
+        padding-top: 80px;
+    }
+
+    .SEO-hero {
+        display: flex;
+        height: auto;
+        min-height: 45vh;
+        width: 100%;
+        justify-content: center;
+        background-image: url('../../Images/SEO-hero.png');
+        background-size: 51.5rem;
+        background-position: 16.1cm 14cm;
+        background-attachment: fixed;
+    }
+
+    .SEO-hero-content {
+        text-align: center;
+        align-content: center;
+        margin: auto 1rem;
+        width: 86%;
+        height: 55%;
+        padding: 2rem 1rem;
+        background-color: rgba(0, 0, 0, 0.611);
+        border-radius: 10px;
+        backdrop-filter: blur(9px);
+    }
+
+    .SEO-hero h1 {
+        font-size: 2rem;
+        color: white;
+        margin: 0;
+        padding: 0;
+    }
+
+    .SEO-philo {
+        width: 88%;
+    }
+
+    .SEO-audit {
+        width: 88%;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .SEO-packages {
+        flex-direction: column;
+        margin: 1rem auto;
+        text-align: center;
+    }
+
+    .SEO-FAQ h1 {
+        text-align: center;
+    }
+
+
+    .FAQ-item {
+        width: 90%;
+        margin: 1rem auto;
+    }
+
+    .FAQ-item-c {
+        height: auto;
+    }
+}

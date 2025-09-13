@@ -1,0 +1,29 @@
+/* src/styles/RevealOnScroll.css */
+
+/* Hidden state for mobile, before it animates into view */
+.reveal-on-scroll-hidden {
+  opacity: 0;
+  transform: translateY(20px); /* Start slightly below */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Define the transition */
+  will-change: opacity, transform; /* Optimize for animation */
+}
+
+/* Visible state after animation, for mobile */
+.reveal-on-scroll-visible {
+  opacity: 1;
+  transform: translateY(0); /* Slide up to original position */
+  /* No transition here, as it's the final state.
+     The transition is defined in the hidden state */
+}
+
+/* On desktop, elements wrapped by RevealOnScroll should simply be visible */
+/* This is primarily handled by the JS not adding the hidden classes,
+   but a fallback to ensure no unexpected styling */
+@media (min-width: 769px) {
+    .reveal-on-scroll-hidden,
+    .reveal-on-scroll-visible {
+        opacity: 1;
+        transform: translateY(0);
+        transition: none; /* Ensure no animation on desktop */
+    }
+}

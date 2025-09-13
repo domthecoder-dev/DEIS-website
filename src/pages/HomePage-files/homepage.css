@@ -1,0 +1,151 @@
+/* homepage.css */
+.home-body {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  padding-top: 80px; /* Adjust if your navbar height is different */
+  font-family: Montserrat, sans-serif;
+}
+
+.Section-1, .Section-3 {
+  width: 100%;
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* Fix for the flip cards container */
+.Sect1-List-Container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.Sect1-List-Item {
+  flex: 1;
+  min-width: 250px;
+  max-width: 300px;
+  height: 200px; /* Fixed height for consistent flip cards */
+}
+
+/* Problem/Result section */
+.Sect1-PandR {
+  max-width: 1200px;
+  height: auto;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.Sect1-PandR h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: White;
+}
+
+.Sect1-PandR h4 {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  color: white;
+}
+
+.Sect1-List-Container {
+  margin-bottom: 5rem;
+}
+
+/* Section 3 styles */
+.Sect3-Ideal {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  text-align: center;
+  background-color: #37383b;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.Sect3-Ideal h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: White;
+}
+
+.Sect3-Ideal h4 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: White;
+}
+
+.Sect3-Ideal ul {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+  list-style-type: none;
+}
+
+.Sect3-Ideal li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: white;
+}
+
+.Sect3-Ideal li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #27ae60;
+  font-weight: bold;
+}
+
+/* Ensure GetQuote component has proper spacing */
+.GetQuote-container {
+  margin: 2rem 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .home-body {
+    padding-top: 50px;
+  }
+  
+  .Sect1-List-Container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .Sect1-List-Item {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .Sect1-List-Container {
+    margin-bottom: 0;
+  }
+  
+  .Sect1-PandR h2 {
+    font-size: 1.8rem;
+  }
+  
+  .Sect1-PandR h4 {
+    font-size: 1.3rem;
+  }
+  
+  .Sect3-Ideal {
+    padding: 2rem 1rem;
+    margin: 0 1rem;
+  }
+  
+  .Sect3-Ideal h2 {
+    font-size: 1.8rem;
+  }
+  
+  .Sect3-Ideal h4 {
+    font-size: 1.3rem;
+  }
+
+}

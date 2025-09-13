@@ -1,0 +1,147 @@
+/* src/styles/AboutPage.css - About Us page specific styles */
+
+/* --- MOBILE-FIRST BASE STYLES --- */
+/* These styles apply to all screen sizes by default,
+   and are then overridden by desktop media queries. */
+
+.about-us-main {
+  font-family: Montserrat, sans-serif;
+  display: flex;
+  flex-direction: column; /* Stack sections vertically */
+  align-items: center; /* Center items horizontally within main */
+  padding-top: 5.1rem; /* Adjust top padding for fixed header */
+  padding-bottom: 2rem;
+  width: 100%; /* More margin on very small mobile */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+.AB-ContentSeciton1 {
+  width: 100%;
+}
+
+.CS1-Header {
+  font-size: 2.2rem;
+  text-align: center;
+  color: white;
+}
+
+.CS1-Person-Container {
+  /* No Code Yet*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 95%;
+  justify-self: center;
+  margin-left: 0.75rem;
+}
+
+.CS1-Person {
+  background-color: #37383b; /* Don't forget to change*/
+  width: 25rem;
+  border: 1px solid white;
+  padding: 0.5px 20px;
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+}
+
+.Person-Name {
+  font-weight: bold;
+  font-size: 2.2rem;
+  padding-top: 1rem;
+  color: white;
+  text-align: center;
+}
+
+.PImage-Container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.Image {
+  width: 9rem;
+  height: 9rem;
+}
+
+.role {
+  font-weight: bold;
+  text-align: center;
+  font-size: 1.1rem;
+  color: white;
+}
+
+.details {
+  color: white;
+}
+
+.OurStory {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 3rem 2rem;
+    justify-items: center;
+    background-color: #37383b;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.OurStory h1{
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: white;
+  text-align: center;
+}
+
+.OurStory p {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+  color: white;
+}
+
+/* --- DESKTOP OVERRIDES (min-width: 769px) --- */
+/* These styles only apply on screens 769px and wider, overriding mobile defaults. */
+@media (min-width: 769px) {
+  .about-us-main {
+    width: 100%; /* Restore wider width for desktop */
+    margin: 0;
+    padding-top: 7rem;
+  }
+
+  .AB-ContentSeciton1 {
+        justify-content: left;
+        margin: 0.5rem;
+    }
+    .CS1-Header {
+        text-align: center;
+        color: white; /* Filler Setting, change when applicable*/
+    }
+    .CS1-Person-Container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 65vw;
+        gap: 20px; /* Optional but recommended for spacing */
+    }
+    .CS1-Person {
+        background-color: #37383bcb; /* Don't forget to change*/
+        flex: 1 1 auto; /* Corrected property to allow items to be in a row */
+        border: 1px solid white;
+        padding: 0.5px 20px;
+        margin-bottom: 2rem;
+        
+    }
+    .Person-Name {
+        font-weight: bold;
+        font-size: 1.8rem;
+        margin: 0;
+        text-align: center;
+    }
+    .PImage-Container {
+        display: flex;
+        justify-content: center;
+    }
+    .Image {
+        width: 9rem;
+        height: 9rem;
+    }
+
+}
