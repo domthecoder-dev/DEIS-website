@@ -14,14 +14,14 @@ function newHomepage() {
                 {/* This section will contain: UVP, Problem/Result */}
                 <HeroSect />
                 <div className="Sect1-PandR">
-                    <h2>Tired of a website that's slow, insecure, and looks just like your competitor's?</h2>
+                    <h2>Tired of a website that is slow, insecure, and looks just like your competitor's?</h2>
                     <h4>We build custom websites that are:</h4>
                     <div className="Sect1-List-Container">
                         <div className="Sect1-List-Item">
                             <FlipCard
                                 className="website-flip-card"
                                 frontContent={<h3>Fast-Loading</h3>}
-                                backContent={<p>Don't lose customers to slow loading speeds.</p>}
+                                backContent={<p>Do not lose customers to slow loading speeds.</p>}
                             />
                         </div>
                         <div className="Sect1-List-Item">
@@ -53,7 +53,7 @@ function newHomepage() {
                 {/* This section will contain: ideal Client, Call to actions */}
                 <div className="Sect3-Ideal">
                     <h2>Is DEIS Right For You?</h2>
-                    <h4>We're the perfect fit for businesses that:</h4>
+                    <h4>We are the perfect fit for businesses that:</h4>
                     <ul>
                         <li>Value quality and customization over cheap, quick fixes.</li>
                         <li>See their website as a key investment in their growth.</li>

@@ -2,32 +2,27 @@ import React from 'react';
 import './BookCall.css';
 
 function BookCall() {
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Add form submission logic here
-        alert('Thank you for your inquiry! We will contact you shortly.');
-    };
     
   return (
     <div className="BookCall-Main-Container">
       <h2 className="BookCall-Header">Book A Call With Us Now</h2>
       <div className="BC-Form-Container">
-        <form onSubmit={handleSubmit}>
+        <form action="https://formsubmit.co/dominic3lliott@gmail.com" method="POST">
                     <div className="form-field">
                         <label htmlFor="frm-name">Name:</label>
-                        <input id="frm-name" type="text" placeholder="Enter your full name" required />
+                        <input id="frm-name" type="text" placeholder="Enter your full name" name="Client Name: "required />
                     </div>
                     <div className="form-field">
                         <label htmlFor="frm-number">Cell Number:</label>
-                        <input id="frm-number" type="tel" placeholder="Enter your phone number" required />
+                        <input id="frm-number" type="tel" placeholder="Enter your phone number" name="Client Phone Number: " required />
                     </div>
                     <div className="form-field">
                         <label htmlFor="frm-email">Email:</label>
-                        <input id="frm-email" type="email" placeholder="Enter your email address" required />
+                        <input id="frm-email" type="email" placeholder="Enter your email address" name="Client Email: " required />
                     </div>
                     <div className="form-field">
                         <label htmlFor="frm-message">Message:</label>
-                        <textarea id="frm-message" placeholder="Tell us about your project needs" required></textarea>
+                        <textarea id="frm-message" placeholder="Tell us about your project needs" name="Client Message: "required></textarea>
                     </div>
                     <button type="submit" className="GAQ-cta-button">Get Started</button>
                 </form>

@@ -18,7 +18,7 @@ const HeroSection = () => {
         <p className="hero-subtitle">
           DE Innovative Solutions creates fully custom, hand-coded websites 
           that are faster, more secure, and designed to perfectly reflect your 
-          brand, because your first impression shouldn't look like everyone else's.
+          brand, because your first impression should not look like everyone else's.
         </p>
         <button className="cta-button"><Link to="/book-a-call" className="no-textdecor">Get Started</Link></button>
       </div>

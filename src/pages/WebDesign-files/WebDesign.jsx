@@ -25,8 +25,8 @@ function WebDesign() {
           <h1 className="OP-title">Our Process</h1>
           <p className="OP-description">
             <ul className="OP-description-ul">
-              <li className="OP-description-li"><b>Discovery & Strategy:</b> We don't just design pages; we architect digital experiences. We start by understanding your business goals, target audience, and brand voice.</li>
-              <li className="OP-description-li"><b>Design & Prototyping:</b> You'll see interactive mockups before a single line of code is written. We design for user experience (UX) and conversion, not just looks.</li>
+              <li className="OP-description-li"><b>Discovery & Strategy:</b> We do not just design pages; we architect digital experiences. We start by understanding your business goals, target audience, and brand voice.</li>
+              <li className="OP-description-li"><b>Design & Prototyping:</b> You will see interactive mockups before a single line of code is written. We design for user experience (UX) and conversion, not just looks.</li>
               <li className="OP-description-li"><b>Built with Modern Technology:</b> <ul className="OP-ul-sublist">
                 <li className="OP-description-li"><b style={{ fontWeight: 'normal', textDecoration: 'underline' }}>React.js / Vite.js:</b> Faster loading times, smoother interactions, and a more app-like feel for your users.</li>
                 <li className="OP-description-li"><b style={{ fontWeight: 'normal', textDecoration: 'underline' }}>Custom Code:</b> Every line of code is written from scratch for your project. This means no bloated, unnecessary code—just lean, efficient, and purposeful functionality.</li>

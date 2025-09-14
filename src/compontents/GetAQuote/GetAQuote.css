@@ -10,7 +10,7 @@
   text-align: center;
   color: #fff;
   overflow: hidden;
-  
+  font-family: Montserrat, sans-serif;
   /* Apply background properties directly here */
   background-image: url('../../Images/Girlsittingatcomputercoding.jpg'); /* 🖼️ Add your image path here */
   background-size: cover;
@@ -88,6 +88,7 @@ form {
 .form-field textarea {
   min-height: 120px;
   resize: vertical;
+  font-family: Montserrat, sans-serif;
 }
 
 .GAQ-cta-button {

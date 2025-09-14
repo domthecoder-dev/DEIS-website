@@ -8,7 +8,7 @@ function FAQPage() {
   // Data for General Questions
   const generalQuestions = [
     {
-      question: "Do I own the website once it's completed?",
+      question: "Do I own the website once it is completed?",
       answer: "Absolutely! Once your website is finalised and you have given your approval, it is entirely yours. You are investing in a custom-built digital asset for your business or personal use, and full ownership is transferred to you upon completion.",
     },
     {
@@ -16,8 +16,8 @@ function FAQPage() {
       answer: "Yes, absolutely! In today's digital landscape, having a website that looks and functions flawlessly on all devices – from desktops to tablets and smartphones – is crucial. Whether we are crafting your site with custom code or utilising platforms like WordPress or Wix, we ensure a fully responsive design that provides an optimal viewing experience for all your visitors.",
     },
     {
-      question: "Can you help with things like SEO (Search Engine Optimization) or website hosting (beyond the initial Xneelo setup)?",
-      answer: "Yes, we can definitely help you optimize your website for search engines! We employ effective strategies to identify relevant keywords and structure your site to improve its visibility in search results. Regarding hosting, while we recommend Xneelo for its user-friendliness, we can certainly work with you if you have already secured hosting with another provider. Please let us know your setup when you request a quote.",
+      question: "Can you help with things like SEO (Search Engine Optimization) or website hosting?",
+      answer: "Yes, we can definitely help you optimize your website for search engines! We employ effective strategies to identify relevant keywords and structure your site to improve its visibility in search results. Regarding hosting, while we do have our own hosting services, we can certainly work with you if you have already secured hosting with another provider. Please let us know your setup when you request a quote.",
     },
     {
       question: "How can I contact you if I have more questions?",

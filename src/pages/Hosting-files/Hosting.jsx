@@ -13,13 +13,13 @@ function Hosting() {
       </div>
       <div className="What-you-get">
         <h1>What You Get</h1>
-        <p>We handle the technical complexities of hosting so you don't have to. Every client enjoys a managed hosting environment optimized for the custom websites we build, featuring:</p>
+        <p>We handle the technical complexities of hosting so you do not have to. Every client enjoys a managed hosting environment optimized for the custom websites we build, featuring:</p>
         <ul>
-          <li>⚡ Blazing-Fast Performance: "Our hosting infrastructure is optimized for speed, ensuring your custom site loads in milliseconds to keep visitors engaged.</li>
-          <li>🛡️ Robust Security & Daily Backups: "Sleep soundly with enterprise-grade security monitoring, malware scanning, and daily automated backups. Your website is protected and always recoverable.</li>
-          <li>🔒 Reliable 99.9% Uptime: "Your website is your hardest-working employee. We ensure it's always open for business with a guaranteed 99.9% uptime."</li>
-          <li>🤝 Expert Support: "Get help from the team who built your site, not a generic support desk. We know your website inside and out."</li>
-          <li>📈 Scalable Resources: "Your hosting grows with your business. Handle traffic spikes with ease."</li>
+          <li>⚡ Blazing-Fast Performance: Our hosting infrastructure is optimized for speed, ensuring your custom site loads in milliseconds to keep visitors engaged.</li>
+          <li>🛡️ Robust Security & Daily Backups: Sleep soundly with enterprise-grade security monitoring, malware scanning, and daily automated backups. Your website is protected and always recoverable.</li>
+          <li>🔒 Reliable 99.9% Uptime: Your website is your hardest-working employee. We ensure it's always open for business with a guaranteed 99.9% uptime.</li>
+          <li>🤝 Expert Support: Get help from the team who built your site, not a generic support desk. We know your website inside and out.</li>
+          <li>📈 Scalable Resources: Your hosting grows with your business. Handle traffic spikes with ease.</li>
         </ul>
       </div>
       <div className="Packages-container">

@@ -17,7 +17,7 @@ function SEO() {
       <div className="section-normalbackground">
         <div className="SEO-philo">
           <h1>Our SEO Philosophy</h1>
-          <p>We don't use shady tricks or black-hat techniques. We build sustainable, white-hat SEO strategies that provide long-term results.</p>
+          <p>We do not use shady tricks or black-hat techniques. We build sustainable, white-hat SEO strategies that provide long-term results.</p>
         </div>
 
         <div className="SEO-audit">
