@@ -16,7 +16,7 @@ const GetAQuote = () => {
                 <h1 className="GAQ-title">Get a Free Quote!</h1>
                 <p className="GAQ-subtitle">Fill out the form below and we'll get back to you shortly</p>
 
-                <form action="https://formsubmit.co/dominic3lliott@gmail.com" method="POST">
+                <form action="https://formsubmit.co/c3b2341dd7554351377e17d1af07ab90" method="POST">
                     <div className="form-field">
                         <label htmlFor="frm-name">Name:</label>
                         <input id="frm-name" type="text" placeholder="Enter your full name" name="Client Name: " required />
