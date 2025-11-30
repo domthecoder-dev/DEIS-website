@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyImage from "../Hooks/LazyIMage"
 import BackgroundImg from "../../Images/Girlsittingatcomputercoding.jpg";
 import "./GetAQuote.css";
 
@@ -6,10 +7,10 @@ const GetAQuote = () => {
     return (
         <div className="GAQ-container">
             {/* Background image with fixed positioning */}
-            <div
+            <LazyImage
                 className="GAQ-background"
                 style={{ backgroundImage: `url(${BackgroundImg})` }}
-            ></div>
+            ></LazyImage>
 
             {/* Content container */}
             <div className="GAQ-content">

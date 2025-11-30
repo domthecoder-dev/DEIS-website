@@ -10,7 +10,7 @@ function BlogPage() {
         <article>
           <h2>
             {/* Link to the specific article page in React */}
-            <Link to="/blog/mobile-first">Mobile-First is Here: Is Your Website Ready? (The Importance of Responsive Design)</Link>
+            <Link to="/articles//blogs/mobile-first">Mobile-First is Here: Is Your Website Ready? (The Importance of Responsive Design)</Link>
           </h2>
           <p className="post-meta">Published on May 01, 2025 by DE Innovative Solutions</p>
           <p className="article-description">
@@ -25,7 +25,7 @@ function BlogPage() {
         <article>
           <h2>
             {/* Link to the specific article page in React */}
-            <Link to="/blog/password-security">Lock It Down: Why Strong Passwords Are Your First Line of Defense</Link>
+            <Link to="/articles/blogs/password-security">Lock It Down: Why Strong Passwords Are Your First Line of Defense</Link>
           </h2>
           <p className="post-meta">Published on April 29, 2025 by DE Innovative Solutions</p>
           <p className="article-description">Weak passwords are like leaving your front door wide open. Learn why strong, unique passwords are

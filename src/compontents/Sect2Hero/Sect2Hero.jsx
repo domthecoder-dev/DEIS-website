@@ -1,15 +1,16 @@
 import React from 'react';
 import BackgroundImg from "../../Images/background-color.jpg";
+import LazyImage from "../Hooks/LazyIMage"
 import "./Sect2-Hero.css";
 
 const HeroSection2 = () => {
   return (
     <div className="hero-container2">
       {/* Background image with fixed positioning */}
-      <div
+      <LazyImage
         className="hero-background2"
         style={{ backgroundImage: `url(${BackgroundImg})` }}
-      ></div>
+      ></LazyImage>
 
       {/* Content container */}
       <div className="hero-content2">

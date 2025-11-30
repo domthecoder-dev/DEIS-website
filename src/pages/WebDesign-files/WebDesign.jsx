@@ -1,4 +1,5 @@
 import React from 'react';
+import LazyBackground from "../../compontents/Hooks/LazyBackground"
 import img from '../../Images/Products/services.png';
 import GetAQuote from '../../compontents/GetAQuote/GetAQuote';
 import './WebDesign.css';
