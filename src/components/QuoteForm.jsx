@@ -1,54 +1,50 @@
-import { useForm } from 'react-hook-form';
-import emailjs from 'emailjs-com';
-
 export default function QuoteForm() {
-  const { register, handleSubmit, formState: { errors }, reset } = useForm();
-
-  const onSubmit = (data) => {
-    emailjs.send(
-      'YOUR_SERVICE_ID',     // ← Replace with your EmailJS Service ID
-      'YOUR_TEMPLATE_ID',    // ← Replace with your EmailJS Template ID
-      data,
-      'YOUR_USER_ID'         // ← Replace with your EmailJS User ID
-    ).then(() => {
-      alert('Quote request sent! We’ll contact you soon.');
-      reset();
-    }).catch(() => {
-      alert('Error sending. Please try again.');
-    });
-  };
-
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="max-w-lg mx-auto space-y-6">
+    <form 
+      action="https://formsubmit.co/c3b2341dd7554351377e17d1af07ab90" 
+      method="POST"
+      className="space-y-5 max-w-lg mx-auto"
+    >
+      {/* Hidden fields for FormSubmit.co */}
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://deinnovativesolutions.co.za/thanks" />
+      <input type="hidden" name="_subject" value="New Quote Request - DEIS" />
+
       <input
-        {...register('name', { required: 'Name is required' })}
+        type="text"
+        name="name"
         placeholder="Name"
-        className="w-full px-4 py-3 rounded bg-white text-gray-900"
+        required
+        className="w-full px-4 py-3 rounded-lg bg-white text-black text-base focus:outline-none focus:ring-2 focus:ring-teal-400"
       />
-      {errors.name && <p className="text-red-300 text-sm">{errors.name.message}</p>}
 
       <input
-        {...register('cell', { required: 'Cell number is required' })}
+        type="tel"
+        name="cell"
         placeholder="Cell Number"
-        className="w-full px-4 py-3 rounded bg-white text-gray-900"
+        required
+        className="w-full px-4 py-3 rounded-lg bg-white text-black text-base focus:outline-none focus:ring-2 focus:ring-teal-400"
       />
-      {errors.cell && <p className="text-red-300 text-sm">{errors.cell.message}</p>}
 
       <input
-        {...register('email', { required: 'Email is required', pattern: { value: /^\S+@\S+$/i, message: 'Invalid email' } })}
+        type="email"
+        name="email"
         placeholder="Email"
-        className="w-full px-4 py-3 rounded bg-white text-gray-900"
+        required
+        className="w-full px-4 py-3 rounded-lg bg-white text-black text-base focus:outline-none focus:ring-2 focus:ring-teal-400"
       />
-      {errors.email && <p className="text-red-300 text-sm">{errors.email.message}</p>}
 
       <textarea
-        {...register('message')}
+        name="message"
         placeholder="Message"
         rows="4"
-        className="w-full px-4 py-3 rounded bg-white text-gray-900"
+        className="w-full px-4 py-3 rounded-lg bg-white text-black text-base focus:outline-none focus:ring-2 focus:ring-teal-400 resize-none"
       />
 
-      <button type="submit" className="btn-primary w-full py-4 text-lg">
+      <button 
+        type="submit" 
+        className="w-full text-black font-bold py-4 rounded-lg text-lg btn-primary hover:bg-teal-400 transition;"
+      >
         Get Started
       </button>
     </form>

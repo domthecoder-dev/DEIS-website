@@ -1,4 +1,4 @@
-import QuoteForm from '../../components/QuoteForm.jsx';
+import QuoteForm from '../../components/QuoteSection.jsx';
 import { useState } from 'react';
 
 const faqs = [
@@ -85,13 +85,7 @@ export default function SEO() {
 
         {/* Quote */}
         <div id="quote" className="bg-gradient-to-t from-gray-900 to-primary text-white py-16 rounded-lg">
-          <div className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Get a Free Quote!</h2>
-            <p className="mb-8 max-w-2xl mx-auto">Fill out the form below and we'll get back to you shortly</p>
             <QuoteForm />
-            <p className="text-sm mt-6">We value your privacy and promise to keep your information secure</p>
-            <p className="text-xs mt-2">© 2025 DE Innovative Solutions</p>
-          </div>
         </div>
       </div>
     </div>

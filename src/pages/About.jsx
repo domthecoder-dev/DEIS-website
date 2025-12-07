@@ -55,7 +55,7 @@ export default function About() {
             {/* Dominic */}
             <div className="text-center">
               <img
-                src="/assets/placeholder-team-dom.jpg"
+                src="/assets/Dominic-Avatar.jpg"
                 alt="Dominic E. - Founder and Lead Website Developer"
                 className="w-48 h-48 object-cover rounded-full mx-auto mb-4"
                 loading="lazy"
@@ -70,7 +70,7 @@ export default function About() {
             {/* Samantha */}
             <div className="text-center">
               <img
-                src="/assets/placeholder-team-sam.jpg"
+                src="/assets/Samantha-Avatar.jpg"
                 alt="Samantha N. - Client Liaison & Admin"
                 className="w-48 h-48 object-cover rounded-full mx-auto mb-4"
                 loading="lazy"
