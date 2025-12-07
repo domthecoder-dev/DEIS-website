@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "clean": "taskkill /f /im node.exe 2>nul & rd /s /q node_modules 2>nul || echo No node_modules to clean",
-    "predeploy": "npm run build && cp public/CNAME dist/ && cp public/404.html dist/ && cp public/Thanks.html dist/",
+    "predeploy": "npm run build && cp public/CNAME dist/ && cp public/404.html dist/ && cp public/thanks.html dist/",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
