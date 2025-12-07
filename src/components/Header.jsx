@@ -82,7 +82,7 @@ export default function Header() {
                 </Link>
               ))}
               <Link
-                to="/#quote"
+                to="/quote"
                 onClick={(e) => {
                   e.preventDefault();
                   document.querySelector('#quote')?.scrollIntoView({ behavior: 'smooth' });
