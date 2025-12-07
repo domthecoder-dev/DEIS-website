@@ -1,7 +1,7 @@
 export default function QuoteForm() {
   return (
     <form 
-      action="https://formsubmit.co/dominic3lliott@gmail.com" 
+      action="https://formsubmit.co/c3b2341dd7554351377e17d1af07ab90" 
       method="POST"
       className="space-y-5 max-w-lg mx-auto"
     >
