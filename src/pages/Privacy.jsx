@@ -12,7 +12,7 @@ export default function Privacy() {
         </p>
 
         <p>
-          We comply with applicable data protection laws, including the <strong>Protection of Personal Information Act (POPIA)</strong> in South Africa, and other relevant regulations. If you have questions about this policy, please contact us at <a href="mailto:info@deinnovativesolutions.co.za" className="text-accent underline">info@deinnovativesolutions.co.za</a>.
+          We comply with applicable data protection laws, including the <strong>Protection of Personal Information Act (POPIA)</strong> in South Africa, and other relevant regulations. If you have questions about this policy, please contact us at <a href="mailto:deinnovativesolutions@gmail.com" className="text-accent underline">deinnovativesolutions@gmail.com</a>.
         </p>
 
         <h2 className="text-2xl font-bold text-primary mt-12 mb-4">1. Information We Collect</h2>
@@ -107,9 +107,9 @@ export default function Privacy() {
         <p className="font-medium">
           DE Innovative Solutions<br />
           Attn: Dominic Elliott (Data Protection Officer)<br />
-          Email: <a href="mailto:info@deinnovativesolutions.co.za" className="text-accent underline">info@deinnovativesolutions.co.za</a><br />
-          Phone: [Your Phone Number]<br />
-          Address: [Your Business Address, e.g., Johannesburg, South Africa]
+          Email: <a href="mailto:deinnovativesolutions@gmail.com" className="text-accent underline">deinnovativesolutions@gmail.com</a><br />
+          Phone: +27 74 768 5793<br />
+          Address: Cape Town, South Africa
         </p>
 
         <p className="mt-12 text-center">

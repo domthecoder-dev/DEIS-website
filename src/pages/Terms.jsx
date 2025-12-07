@@ -130,7 +130,7 @@ export default function Terms() {
           <li><strong>Severability:</strong> If any provision is invalid, the remainder remains enforceable.</li>
           <li><strong>Waiver:</strong> No waiver unless in writing.</li>
           <li><strong>Assignment:</strong> You may not assign this agreement without our consent. We may assign in connection with a business sale.</li>
-          <li><strong>Notices:</strong> Sent via email to <a href="mailto:info@deinnovativesolutions.co.za" className="text-accent underline">info@deinnovativesolutions.co.za</a> (us) or your provided contact (you).</li>
+          <li><strong>Notices:</strong> Sent via email to <a href="mailto:deinnovativesolutions@gmail.com" className="text-accent underline">deinnovativesolutions@gmail.com</a> (us) or your provided contact (you).</li>
         </ul>
 
         <h2 className="text-2xl font-bold text-primary mt-12 mb-4">15. Changes to Terms</h2>
@@ -141,9 +141,9 @@ export default function Terms() {
         <p className="font-medium">
           DE Innovative Solutions<br />
           Attn: Dominic Elliott<br />
-          Email: <a href="mailto:info@deinnovativesolutions.co.za" className="text-accent underline">info@deinnovativesolutions.co.za</a><br />
-          Phone: [Your Phone Number]<br />
-          Address: [Your Business Address, e.g., Johannesburg, South Africa]
+          Email: <a href="mailto:deinnovativesolutions@gmail.com" className="text-accent underline">deinnovativesolutions@gmail.com</a><br />
+          Phone: +27 74 768 5793<br />
+          Address: Cape Town, South Africa
         </p>
       </div>
     </div>
