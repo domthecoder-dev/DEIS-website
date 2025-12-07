@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom globals for DEIS */
+html { scroll-behavior: smooth; }
+body { @apply bg-white text-gray-900 font-sans; }
+h1, h2, h3, h4 { @apply font-display font-bold; }
+.btn-primary { @apply bg-accent text-white px-6 py-3 rounded-lg font-medium hover:bg-teal-400 transition; }
