@@ -77,7 +77,7 @@ export default function Privacy() {
           <li><strong>Objection/Withdrawal:</strong> Object to processing or withdraw consent (e.g., for marketing emails).</li>
           <li><strong>Portability:</strong> Receive your data in a structured format.</li>
         </ul>
-        <p>To exercise these rights, email <a href="mailto:info@deinnovativesolutions.co.za" className="text-accent underline">info@deinnovativesolutions.co.za</a>. We respond within 30 days. For POPIA-specific complaints, contact the Information Regulator of South Africa.</p>
+        <p>To exercise these rights, email <a href="mailto:deinnovativesolutions@gmail.com" className="text-accent underline">deinnovativesolutions@gmail.com</a>. We respond within 30 days. For POPIA-specific complaints, contact the Information Regulator of South Africa.</p>
         <p>You can also:</p>
         <ul className="list-disc pl-6 space-y-2">
           <li>Unsubscribe from emails via the "unsubscribe" link.</li>
