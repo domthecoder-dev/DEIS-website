@@ -5,13 +5,14 @@
   "homepage": "https://deinnovativesolutions.co.za",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "node node_modules/vite/bin/vite.js build",
     "preview": "vite preview",
     "clean": "taskkill /f /im node.exe 2>nul & rd /s /q node_modules 2>nul || echo No node_modules to clean",
     "predeploy": "npm run build && cp public/CNAME dist/ && cp public/404.html dist/ && cp public/thanks.html dist/",
-    "deploy": "gh-pages -d dist"
+    "deploy": "node node_modules/gh-pages/bin/gh-pages.js -d dist"
   },
   "dependencies": {
+    "lucide-react": "^0.556.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.0"

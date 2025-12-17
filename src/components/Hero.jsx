@@ -7,7 +7,7 @@ export default function Hero() {
         </h1>
         <p className="text-lg md:text-xl mb-8 max-w-3xl mx-auto">
           DE Innovative Solutions creates fully custom, hand-coded websites guaranteed to score{' '}
-          <strong>95+ on Google Speed Tests</strong>—because your first impression should be fast, secure, and unlike anyone else's.
+          <strong>90+ on Google Speed Tests</strong>—because your first impression should be fast, secure, and unlike anyone else's.
         </p>
         <a
           href="#quote"

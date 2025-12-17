@@ -12,6 +12,7 @@ import FAQ from './pages/FAQ.jsx';
 import Quote from './pages/Quote.jsx';
 import Privacy from './pages/Privacy.jsx';
 import Terms from './pages/Terms.jsx';
+import Projects from './pages/Projects.jsx';
 
 // Scroll to top on route change
 function ScrollToTop() {
@@ -42,6 +43,7 @@ function App() {
             <Route path="/quote" element={<Quote />} />
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
+            <Route path="/projects" element={<Projects />} />
           </Routes>
         </main>
         <Footer />
